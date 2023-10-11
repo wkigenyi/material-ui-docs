@@ -2,17 +2,24 @@
 import * as React from 'react';
 import { styled, alpha } from '@mui/material/styles';
 import Box from '@mui/material/Box';
-import Chip from '@mui/material/Chip';
+// import Chip from '@mui/material/Chip';
 import ButtonBase from '@mui/material/ButtonBase';
+import CreditScoreIcon from '@mui/icons-material/CreditScore'
+import SavingsIcon from '@mui/icons-material/Savings'
+import PieChartIcon from '@mui/icons-material/PieChart'
+import CreditCardOffIcon from '@mui/icons-material/CreditCardOff'
+import AssessmentIcon from '@mui/icons-material/Assessment'
+import TuneIcon from '@mui/icons-material/Tune'
 import Popper from '@mui/material/Popper';
 import Paper from '@mui/material/Paper';
 import { unstable_debounce as debounce } from '@mui/utils';
 import Fade from '@mui/material/Fade';
 import Typography from '@mui/material/Typography';
-import IconImage from 'docs/src/components/icon/IconImage';
+// import IconImage from 'docs/src/components/icon/IconImage';
 import ROUTES from 'docs/src/route';
 import Link from 'docs/src/modules/components/Link';
-import MuiProductSelector from 'docs/src/modules/components/MuiProductSelector';
+// import MuiProductSelector from 'docs/src/modules/components/MuiProductSelector';
+import BankayoProductSelector from 'docs/src/modules/components/BankayoProductSelector';
 
 const Navigation = styled('nav')(({ theme }) => [
   {
@@ -151,8 +158,8 @@ export default function HeaderNavBar() {
   const [subMenuOpen, setSubMenuOpen] = React.useState<null | 'products' | 'docs'>(null);
   const [subMenuIndex, setSubMenuIndex] = React.useState<number | null>(null);
   const navRef = React.useRef<HTMLUListElement | null>(null);
-  const productsMenuRef = React.useRef<HTMLButtonElement>(null);
-  const docsMenuRef = React.useRef<HTMLButtonElement>(null);
+  const productsMenuRef = React.useRef<HTMLButtonElement | null>(null);
+  const docsMenuRef = React.useRef<HTMLButtonElement | null>(null);
   React.useEffect(() => {
     if (typeof subMenuIndex === 'number') {
       document.getElementById(PRODUCT_IDS[subMenuIndex])?.focus();
@@ -291,46 +298,55 @@ export default function HeaderNavBar() {
                       <ProductSubMenu
                         id={PRODUCT_IDS[0]}
                         href={ROUTES.productCore}
-                        icon={<IconImage name="product-core" />}
-                        name="MUI Core"
-                        description="Ready-to-use foundational React components, free forever."
+                        icon={<CreditScoreIcon />}
+                        name="Customizable Loan Products"
+                        description="Create customizable templates for all you loans origination and automation"
                       />
                     </li>
                     <li>
                       <ProductSubMenu
                         id={PRODUCT_IDS[1]}
                         href={ROUTES.productAdvanced}
-                        icon={<IconImage name="product-advanced" />}
-                        name="MUI X"
-                        description="Advanced and powerful components for complex use cases."
+                        icon={<SavingsIcon />}
+                        name="Savings Products"
+                        description="Create customizable configurations for your deposit accounts"
                       />
                     </li>
                     <li>
                       <ProductSubMenu
                         id={PRODUCT_IDS[2]}
                         href={ROUTES.productTemplates}
-                        icon={<IconImage name="product-templates" />}
-                        name="Templates"
-                        description="Fully built, out-of-the-box, templates for your application."
+                        icon={<PieChartIcon />}
+                        name="Share Products"
+                        description="Build Share Products for your members"
                       />
                     </li>
                     <li>
                       <ProductSubMenu
                         id={PRODUCT_IDS[3]}
                         href={ROUTES.productDesignKits}
-                        icon={<IconImage name="product-designkits" />}
-                        name="Design kits"
-                        description="Our components available in your favorite design tool."
+                        icon={<CreditCardOffIcon/>}
+                        name="Product Charges & Fees"
+                        description="Customize fees and penalties for your products"
                       />
                     </li>
                     <li>
                       <ProductSubMenu
                         id={PRODUCT_IDS[4]}
                         href={ROUTES.productToolpad}
-                        icon={<IconImage name="product-toolpad" />}
-                        name="MUI Toolpad"
-                        chip={<Chip label="Beta" size="small" color="primary" variant="outlined" />}
-                        description="Low-code admin builder."
+                        icon={<AssessmentIcon />}
+                        name="Robust Accounting & Reporting"
+                        
+                        description="Chart Of Accounts for your products and limitless reporting"
+                      />
+                    </li>
+                    <li>
+                      <ProductSubMenu
+                        id={PRODUCT_IDS[4]}
+                        href={ROUTES.productToolpad}
+                        icon={<TuneIcon />}
+                        name="Customizations"
+                        description="BANKAYO can be customized to work your way"
                       />
                     </li>
                   </ul>
@@ -352,7 +368,7 @@ export default function HeaderNavBar() {
             onClick={handleClickMenu('docs')}
             aria-controls={subMenuOpen === 'docs' ? 'docs-popper' : undefined}
           >
-            Docs
+            Learn
           </ButtonBase>
           <Popper
             id="docs-popper"
@@ -385,7 +401,7 @@ export default function HeaderNavBar() {
                   })}
                 >
                   <ul>
-                    <MuiProductSelector />
+                    <BankayoProductSelector />
                   </ul>
                 </Paper>
               </Fade>
@@ -393,14 +409,18 @@ export default function HeaderNavBar() {
           </Popper>
         </li>
         <li>
-          <Link href={ROUTES.pricing}>Pricing</Link>
-        </li>
-        <li>
           <Link href={ROUTES.about}>About us</Link>
         </li>
         <li>
-          <Link href={ROUTES.blog}>Blog</Link>
+          <Link href={ROUTES.contact}>Contact us</Link>
         </li>
+        {/* <li>
+          <Link href={ROUTES.pricing}>Pricing</Link>
+        </li>
+        
+        <li>
+          <Link href={ROUTES.blog}>Blog</Link>
+        </li> */}
       </ul>
     </Navigation>
   );

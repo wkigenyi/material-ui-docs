@@ -96,22 +96,22 @@
     },
     "getButtonProps": {
       "type": {
-        "name": "&lt;ExternalProps extends Record&lt;string, unknown&gt; = {}&gt;(externalProps?: ExternalProps) =&gt; UseSelectButtonSlotProps&lt;ExternalProps&gt;",
-        "description": "&lt;ExternalProps extends Record&lt;string, unknown&gt; = {}&gt;(externalProps?: ExternalProps) =&gt; UseSelectButtonSlotProps&lt;ExternalProps&gt;"
+        "name": "&lt;OtherHandlers extends EventHandlers = {}&gt;(otherHandlers?: OtherHandlers) =&gt; UseSelectButtonSlotProps&lt;OtherHandlers&gt;",
+        "description": "&lt;OtherHandlers extends EventHandlers = {}&gt;(otherHandlers?: OtherHandlers) =&gt; UseSelectButtonSlotProps&lt;OtherHandlers&gt;"
       },
       "required": true
     },
     "getHiddenInputProps": {
       "type": {
-        "name": "&lt;ExternalProps extends Record&lt;string, unknown&gt; = {}&gt;(externalProps?: ExternalProps) =&gt; UseSelectHiddenInputSlotProps&lt;ExternalProps&gt;",
-        "description": "&lt;ExternalProps extends Record&lt;string, unknown&gt; = {}&gt;(externalProps?: ExternalProps) =&gt; UseSelectHiddenInputSlotProps&lt;ExternalProps&gt;"
+        "name": "&lt;OtherHandlers extends EventHandlers = {}&gt;(otherHandlers?: OtherHandlers) =&gt; UseSelectHiddenInputSlotProps&lt;OtherHandlers&gt;",
+        "description": "&lt;OtherHandlers extends EventHandlers = {}&gt;(otherHandlers?: OtherHandlers) =&gt; UseSelectHiddenInputSlotProps&lt;OtherHandlers&gt;"
       },
       "required": true
     },
     "getListboxProps": {
       "type": {
-        "name": "&lt;ExternalProps extends Record&lt;string, unknown&gt; = {}&gt;(externalProps?: ExternalProps) =&gt; UseSelectListboxSlotProps&lt;ExternalProps&gt;",
-        "description": "&lt;ExternalProps extends Record&lt;string, unknown&gt; = {}&gt;(externalProps?: ExternalProps) =&gt; UseSelectListboxSlotProps&lt;ExternalProps&gt;"
+        "name": "&lt;OtherHandlers extends EventHandlers = {}&gt;(otherHandlers?: OtherHandlers) =&gt; UseSelectListboxSlotProps&lt;OtherHandlers&gt;",
+        "description": "&lt;OtherHandlers extends EventHandlers = {}&gt;(otherHandlers?: OtherHandlers) =&gt; UseSelectListboxSlotProps&lt;OtherHandlers&gt;"
       },
       "required": true
     },

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { alpha, styled } from '@mui/material/styles';
+import { alpha } from '@mui/material/styles';
 import Box, { BoxProps } from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
@@ -482,7 +482,7 @@ const rowHeaders: Record<string, React.ReactNode> = {
     <ColumnHead label="Column filters" href="/x/react-data-grid/filtering/" />
   ),
   'data-grid/filter-quick': (
-    <ColumnHead label="Quick filter (Search)" href="/x/react-data-grid/filtering/quick-filter/" />
+    <ColumnHead label="Quick filter" href="/x/react-data-grid/filtering/quick-filter/" />
   ),
   'data-grid/header-filters': (
     <ColumnHead label="Header filters" href="/x/react-data-grid/filtering/header-filters/" />
@@ -558,33 +558,6 @@ const rowHeaders: Record<string, React.ReactNode> = {
   ),
   'date-picker/simple': <ColumnHead label="Date Picker" />,
   'date-picker/range': <ColumnHead label="Date Range Picker" />,
-
-  // -- charts - components --
-  'charts/line': <ColumnHead label="Line chart" href="/x/react-charts/lines/" />,
-  'charts/bar': <ColumnHead label="Bar chart" href="/x/react-charts/bars/" />,
-  'charts/scatter': <ColumnHead label="Scatter chart" href="/x/react-charts/scatter/" />,
-  'charts/pie': <ColumnHead label="Pie chart" href="/x/react-charts/pie/" />,
-  'charts/sparkline': <ColumnHead label="Sparkline" href="/x/react-charts/sparkline/" />,
-  'charts/gauge': <ColumnHead label="Gauge" href="/x/react-charts/gauge/" />,
-  'charts/treemap': <ColumnHead label="Tree map" href="/x/react-charts/tree-map/" />,
-  'charts/heatmap': <ColumnHead label="Heat map" href="/x/react-charts/heat-map/" />,
-  'charts/radar': <ColumnHead label="Radar" href="/x/react-charts/radar/" />,
-  'charts/funnel': <ColumnHead label="Funnel" href="/x/react-charts/funnel/" />,
-  'charts/sankey': <ColumnHead label="Sankey" href="/x/react-charts/sankey/" />,
-  'charts/gantt': <ColumnHead label="Gantt" href="/x/react-charts/gantt/" />,
-  'charts/gantt-advanced': <ColumnHead label="Advanced Gantt" />,
-  'charts/candlestick': <ColumnHead label="Candlestick" />,
-  'charts/large-dataset': <ColumnHead label="Large dataset with canvas" />,
-  // -- charts - features --
-  'charts/legend': <ColumnHead label="Legend" href="/x/react-charts/legend/" />,
-  'charts/tooltip': <ColumnHead label="Tooltip" href="/x/react-charts/tooltip/" />,
-  'charts/mouse-zoom': <ColumnHead label="Zoom on mouse" />,
-  'charts/export': <ColumnHead label="Export" />,
-  // -- charts - datagrid --
-  'charts/cell-with-charts': <ColumnHead label="Cell with chart" />,
-  'charts/filter-interaction': <ColumnHead label="Row filtering" />,
-  'charts/selection-interaction': <ColumnHead label="Range selection" />,
-
   'mui-x-production': <ColumnHead label="Perpetual use in production" />,
   'mui-x-development': <ColumnHead label="Development license" tooltip="For active development" />,
   'mui-x-development-perpetual': (
@@ -663,23 +636,6 @@ const rowHeaders: Record<string, React.ReactNode> = {
 const yes = <IconImage name="pricing/yes" title="Included" />;
 const pending = <IconImage name="pricing/time" title="Work in progress" />;
 const no = <IconImage name="pricing/no" title="Not included" />;
-const toBeDefined = (
-  <Typography
-    component={Link}
-    href="https://forms.gle/19vN87eBvmXPjBVp6"
-    target="_blank"
-    variant="body2"
-    sx={{
-      '&:hover > svg': { color: 'primary.main', opacity: 1 },
-      fontWeight: 500,
-      pl: '16px',
-    }}
-    title="To be determined"
-  >
-    TBD
-    <LaunchRounded color="primary" sx={{ fontSize: 14, ml: 0.5, opacity: 0, transition: '0.3s' }} />
-  </Typography>
-);
 
 const communityData: Record<string, React.ReactNode> = {
   // MUI Core
@@ -688,13 +644,11 @@ const communityData: Record<string, React.ReactNode> = {
   'Material UI': yes,
   'Joy UI': yes,
   // MUI X
-  // -- data grid - columns --
   'data-grid/column-groups': yes,
   'data-grid/column-spanning': yes,
   'data-grid/column-resizing': no,
   'data-grid/column-reorder': no,
   'data-grid/column-pinning': no,
-  // -- data grid - rows --
   'data-grid/row-height': yes,
   'data-grid/row-spanning': pending,
   'data-grid/row-reordering': no,
@@ -702,7 +656,6 @@ const communityData: Record<string, React.ReactNode> = {
   'data-grid/row-selection': yes,
   'data-grid/row-multiselection': no,
   'data-grid/row-cell-selection': no,
-  // -- data grid - filter --
   'data-grid/filter-quick': yes,
   'data-grid/filter-column': yes,
   'data-grid/header-filters': no,
@@ -711,10 +664,8 @@ const communityData: Record<string, React.ReactNode> = {
   'data-grid/multi-column-sorting': no,
   'data-grid/pagination': yes,
   'data-grid/pagination-large': no,
-  // -- data grid - edit --
   'data-grid/edit-row': yes,
   'data-grid/edit-cell': yes,
-  // -- data grid - export --
   'data-grid/file-csv': yes,
   'data-grid/file-print': yes,
   'data-grid/file-clipboard-copy': yes,
@@ -731,38 +682,8 @@ const communityData: Record<string, React.ReactNode> = {
   'data-grid/accessibility': yes,
   'data-grid/keyboard-nav': yes,
   'data-grid/localization': yes,
-
-  // -- picker --
   'date-picker/simple': yes,
   'date-picker/range': no,
-
-  // -- charts - components --
-  'charts/line': yes,
-  'charts/bar': yes,
-  'charts/scatter': yes,
-  'charts/pie': yes,
-  'charts/sparkline': yes,
-  'charts/gauge': pending,
-  'charts/treemap': pending,
-  'charts/heatmap': pending,
-  'charts/radar': pending,
-  'charts/funnel': no,
-  'charts/sankey': no,
-  'charts/gantt': no,
-  'charts/gantt-advanced': no,
-  'charts/candlestick': no,
-  'charts/large-dataset': no,
-  // -- charts - features --
-  'charts/legend': yes,
-  'charts/tooltip': yes,
-  'charts/mouse-zoom': no,
-  'charts/export': no,
-  // -- charts - datagrid --
-  'charts/cell-with-charts': pending,
-  'charts/filter-interaction': no,
-  'charts/selection-interaction': no,
-
-  // -- general --
   'mui-x-production': yes,
   'mui-x-updates': yes,
   'mui-x-development': yes,
@@ -785,13 +706,11 @@ const proData: Record<string, React.ReactNode> = {
   'Material UI': yes,
   'Joy UI': yes,
   // MUI X
-  // -- data grid - columns --
   'data-grid/column-groups': yes,
   'data-grid/column-spanning': yes,
   'data-grid/column-resizing': yes,
   'data-grid/column-reorder': yes,
   'data-grid/column-pinning': yes,
-  // -- data grid - rows --
   'data-grid/row-height': yes,
   'data-grid/row-spanning': pending,
   'data-grid/row-reordering': yes,
@@ -799,7 +718,6 @@ const proData: Record<string, React.ReactNode> = {
   'data-grid/row-selection': yes,
   'data-grid/row-multiselection': yes,
   'data-grid/row-cell-selection': no,
-  // -- data grid - filter --
   'data-grid/filter-quick': yes,
   'data-grid/filter-column': yes,
   'data-grid/header-filters': yes,
@@ -808,10 +726,8 @@ const proData: Record<string, React.ReactNode> = {
   'data-grid/multi-column-sorting': yes,
   'data-grid/pagination': yes,
   'data-grid/pagination-large': yes,
-  // -- data grid - edit --
   'data-grid/edit-row': yes,
   'data-grid/edit-cell': yes,
-  // -- data grid - export --
   'data-grid/file-csv': yes,
   'data-grid/file-print': yes,
   'data-grid/file-clipboard-copy': yes,
@@ -830,34 +746,6 @@ const proData: Record<string, React.ReactNode> = {
   'data-grid/localization': yes,
   'date-picker/simple': yes,
   'date-picker/range': yes,
-
-  // -- charts - components --
-  'charts/line': yes,
-  'charts/bar': yes,
-  'charts/scatter': yes,
-  'charts/pie': yes,
-  'charts/sparkline': yes,
-  'charts/gauge': pending,
-  'charts/treemap': pending,
-  'charts/heatmap': pending,
-  'charts/radar': pending,
-  'charts/funnel': pending,
-  'charts/sankey': pending,
-  'charts/gantt': pending,
-  'charts/gantt-advanced': no,
-  'charts/candlestick': no,
-  'charts/large-dataset': no,
-  // -- charts - features --
-  'charts/legend': yes,
-  'charts/tooltip': yes,
-  'charts/mouse-zoom': pending,
-  'charts/export': pending,
-  // -- charts - datagrid --
-  'charts/cell-with-charts': pending,
-  'charts/filter-interaction': pending,
-  'charts/selection-interaction': no,
-
-  // -- general --
   'mui-x-production': yes,
   'mui-x-development': <Info value="1 year" />,
   'mui-x-development-perpetual': <Info value="Perpetual" />,
@@ -885,13 +773,11 @@ const premiumData: Record<string, React.ReactNode> = {
   'Material UI': yes,
   'Joy UI': yes,
   // MUI X
-  // -- data grid - columns --
   'data-grid/column-groups': yes,
   'data-grid/column-spanning': yes,
   'data-grid/column-resizing': yes,
   'data-grid/column-reorder': yes,
   'data-grid/column-pinning': yes,
-  // -- data grid - rows --
   'data-grid/row-height': yes,
   'data-grid/row-spanning': pending,
   'data-grid/row-reordering': yes,
@@ -899,7 +785,6 @@ const premiumData: Record<string, React.ReactNode> = {
   'data-grid/row-selection': yes,
   'data-grid/row-multiselection': yes,
   'data-grid/row-cell-selection': yes,
-  // -- data grid - filter --
   'data-grid/filter-quick': yes,
   'data-grid/filter-column': yes,
   'data-grid/header-filters': yes,
@@ -908,10 +793,8 @@ const premiumData: Record<string, React.ReactNode> = {
   'data-grid/multi-column-sorting': yes,
   'data-grid/pagination': yes,
   'data-grid/pagination-large': yes,
-  // -- data grid - edit --
   'data-grid/edit-row': yes,
   'data-grid/edit-cell': yes,
-  // -- data grid - export --
   'data-grid/file-csv': yes,
   'data-grid/file-print': yes,
   'data-grid/file-clipboard-copy': yes,
@@ -930,34 +813,6 @@ const premiumData: Record<string, React.ReactNode> = {
   'data-grid/localization': yes,
   'date-picker/simple': yes,
   'date-picker/range': yes,
-
-  // -- charts - components --
-  'charts/line': yes,
-  'charts/bar': yes,
-  'charts/scatter': yes,
-  'charts/pie': yes,
-  'charts/sparkline': yes,
-  'charts/gauge': pending,
-  'charts/treemap': pending,
-  'charts/heatmap': pending,
-  'charts/radar': pending,
-  'charts/funnel': pending,
-  'charts/sankey': pending,
-  'charts/gantt': pending,
-  'charts/gantt-advanced': toBeDefined,
-  'charts/candlestick': toBeDefined,
-  'charts/large-dataset': toBeDefined,
-  // -- charts - features --
-  'charts/legend': yes,
-  'charts/tooltip': yes,
-  'charts/mouse-zoom': pending,
-  'charts/export': pending,
-  // -- charts - datagrid --
-  'charts/cell-with-charts': pending,
-  'charts/filter-interaction': pending,
-  'charts/selection-interaction': pending,
-
-  // -- general --
   'mui-x-production': yes,
   'mui-x-development': <Info value="1 year" />,
   'mui-x-development-perpetual': <Info value="Perpetual" />,
@@ -1069,7 +924,7 @@ function StickyHead({
         (theme) =>
           theme.applyDarkStyles({
             boxShadow: `inset 0px -1px 1px ${(theme.vars || theme).palette.primaryDark[700]}`,
-            backgroundColor: alpha(theme.palette.primaryDark[900], 0.7),
+            backgroundColor: alpha(theme.palette.primaryDark[900], 0.72),
           }),
       ]}
     >
@@ -1102,13 +957,17 @@ function renderMasterRow(key: string, gridSx: object, plans: Array<any>) {
         (theme) => ({
           '&:hover > div': {
             bgcolor: alpha(theme.palette.grey[50], 0.4),
+            '@media (hover: none)': {
+              bgcolor: 'initial',
+            },
           },
-          ...theme.applyDarkStyles({
-            '&:hover > div': {
-              bgcolor: alpha(theme.palette.primaryDark[900], 0.5),
+        }),
+        (theme) =>
+          theme.applyDarkStyles({
+            '&:hover': {
+              bgcolor: alpha(theme.palette.primaryDark[900], 0.3),
             },
           }),
-        }),
       ]}
     >
       {rowHeaders[key]}
@@ -1175,22 +1034,6 @@ function PricingTableBuyPremium() {
   );
 }
 
-const StyledCollapse = styled(Collapse, {
-  name: 'MuiSlider',
-  slot: 'Track',
-})(({ theme }) => {
-  return {
-    position: 'relative',
-    marginLeft: theme.spacing(1.5),
-    borderLeftWidth: '2px',
-    borderLeftStyle: 'solid',
-    borderColor: theme.palette.grey[100],
-    ...theme.applyDarkStyles({
-      borderColor: theme.palette.primaryDark[700],
-    }),
-  };
-});
-
 export default function PricingTable({
   columnHeaderHidden,
   plans = ['community', 'pro', 'premium'],
@@ -1201,12 +1044,10 @@ export default function PricingTable({
 }) {
   const router = useRouter();
   const [dataGridCollapsed, setDataGridCollapsed] = React.useState(false);
-  const [chartsCollapsed, setChartsCollapsed] = React.useState(false);
 
   React.useEffect(() => {
     if (router.query['expand-path'] === 'all') {
       setDataGridCollapsed(true);
-      setChartsCollapsed(true);
     }
   }, [router.query]);
 
@@ -1223,21 +1064,13 @@ export default function PricingTable({
     ml: '-14px',
     '&>div:first-of-type': {
       ml: '14px',
-      width: 'calc(100% - 14px)', // avoid overflow on hover transparent background
     },
   };
 
-  const dataGridUnfoldMore = (
+  const unfoldMore = (
     <UnfoldMoreRounded
       fontSize="small"
       sx={{ color: 'grey.600', opacity: dataGridCollapsed ? 0 : 1 }}
-    />
-  );
-
-  const chartsUnfoldMore = (
-    <UnfoldMoreRounded
-      fontSize="small"
-      sx={{ color: 'grey.600', opacity: chartsCollapsed ? 0 : 1 }}
     />
   );
 
@@ -1304,13 +1137,11 @@ export default function PricingTable({
         }}
       >
         <Cell />
-        <Cell sx={{ minHeight: 60 }}>{dataGridUnfoldMore}</Cell>
+        <Cell sx={{ minHeight: 60 }}>{unfoldMore}</Cell>
         <Cell highlighted sx={{ display: { xs: 'none', md: 'flex' }, minHeight: 60 }}>
-          {dataGridUnfoldMore}
+          {unfoldMore}
         </Cell>
-        <Cell sx={{ display: { xs: 'none', md: 'flex' }, minHeight: 60 }}>
-          {dataGridUnfoldMore}
-        </Cell>
+        <Cell sx={{ display: { xs: 'none', md: 'flex' }, minHeight: 60 }}>{unfoldMore}</Cell>
         <Button
           fullWidth
           onClick={() => setDataGridCollapsed((bool) => !bool)}
@@ -1353,7 +1184,20 @@ export default function PricingTable({
           Data Grid
         </Button>
       </Box>
-      <StyledCollapse in={dataGridCollapsed} timeout={700}>
+      <Collapse
+        in={dataGridCollapsed}
+        timeout={700}
+        sx={(theme) => ({
+          position: 'relative',
+          ml: 1.5,
+          borderLeftWidth: '2px',
+          borderLeftStyle: 'solid',
+          borderColor: 'grey.100',
+          ...theme.applyDarkStyles({
+            borderColor: 'primaryDark.700',
+          }),
+        })}
+      >
         <RowCategory>Column features</RowCategory>
         {renderNestedRow('data-grid/column-groups')}
         {divider}
@@ -1440,117 +1284,11 @@ export default function PricingTable({
         {renderNestedRow('data-grid/keyboard-nav')}
         {divider}
         {renderNestedRow('data-grid/localization')}
-      </StyledCollapse>
+      </Collapse>
       {divider}
       {renderRow('date-picker/simple')}
       {divider}
       {renderRow('date-picker/range')}
-      {divider}
-      <Box
-        sx={{
-          position: 'relative',
-          minHeight: 58,
-          '& svg': { transition: '0.3s' },
-          '&:hover svg': { color: 'primary.main' },
-          ...gridSx,
-        }}
-      >
-        <Cell />
-        <Cell sx={{ minHeight: 60 }}>{chartsUnfoldMore}</Cell>
-        <Cell highlighted sx={{ display: { xs: 'none', md: 'flex' }, minHeight: 60 }}>
-          {chartsUnfoldMore}
-        </Cell>
-        <Cell sx={{ display: { xs: 'none', md: 'flex' }, minHeight: 60 }}>{chartsUnfoldMore}</Cell>
-        <Button
-          fullWidth
-          onClick={() => setChartsCollapsed((bool) => !bool)}
-          endIcon={
-            <KeyboardArrowRightRounded
-              color="primary"
-              sx={{
-                transform: chartsCollapsed ? 'rotate(-90deg)' : 'rotate(90deg)',
-              }}
-            />
-          }
-          sx={[
-            (theme) => ({
-              p: 1,
-              py: 1.5,
-              justifyContent: 'flex-start',
-              fontWeight: 400,
-              borderRadius: '0px',
-              color: 'text.primary',
-              position: 'absolute',
-              left: 0,
-              top: 0,
-              width: '100%',
-              height: '100%',
-              '&:hover': {
-                bgcolor: alpha(theme.palette.primary.main, 0.06),
-                '@media (hover: none)': {
-                  bgcolor: 'initial',
-                },
-              },
-            }),
-            (theme) =>
-              theme.applyDarkStyles({
-                '&:hover': {
-                  bgcolor: alpha(theme.palette.primary.main, 0.06),
-                },
-              }),
-          ]}
-        >
-          Charts
-        </Button>
-      </Box>
-      <StyledCollapse in={chartsCollapsed} timeout={700}>
-        <RowCategory>Components</RowCategory>
-        {renderNestedRow('charts/line')}
-        {divider}
-        {renderNestedRow('charts/bar')}
-        {divider}
-        {renderNestedRow('charts/scatter')}
-        {divider}
-        {renderNestedRow('charts/pie')}
-        {divider}
-        {renderNestedRow('charts/sparkline')}
-        {divider}
-        {renderNestedRow('charts/gauge')}
-        {divider}
-        {renderNestedRow('charts/treemap')}
-        {divider}
-        {renderNestedRow('charts/heatmap')}
-        {divider}
-        {renderNestedRow('charts/radar')}
-        {divider}
-        {renderNestedRow('charts/funnel')}
-        {divider}
-        {renderNestedRow('charts/sankey')}
-        {divider}
-        {renderNestedRow('charts/gantt')}
-        {divider}
-        {renderNestedRow('charts/gantt-advanced')}
-        {divider}
-        {renderNestedRow('charts/candlestick')}
-        {divider}
-        {renderNestedRow('charts/large-dataset')}
-        {divider}
-        <RowCategory>Interactions</RowCategory>
-        {renderNestedRow('charts/legend')}
-        {divider}
-        {renderNestedRow('charts/tooltip')}
-        {divider}
-        {renderNestedRow('charts/mouse-zoom')}
-        {divider}
-        {renderNestedRow('charts/export')}
-        {divider}
-        <RowCategory>Data Grid Integration</RowCategory>
-        {renderNestedRow('charts/cell-with-charts')}
-        {divider}
-        {renderNestedRow('charts/filter-interaction')}
-        {divider}
-        {renderNestedRow('charts/selection-interaction')}
-      </StyledCollapse>
       {divider}
       {renderRow('mui-x-production')}
       {divider}

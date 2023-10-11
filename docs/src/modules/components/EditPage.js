@@ -17,9 +17,6 @@ export default function EditPage(props) {
   return (
     <Button
       component="a"
-      size="small"
-      variant="outlined"
-      startIcon={<GitHubIcon sx={{ mr: 0.5 }} />}
       href={
         userLanguage === 'en'
           ? `${process.env.SOURCE_CODE_REPO}/edit/${process.env.SOURCE_GITHUB_BRANCH}${sourceLocation}`
@@ -30,10 +27,25 @@ export default function EditPage(props) {
       }
       target="_blank"
       rel="noopener nofollow"
+      size="small"
+      startIcon={<GitHubIcon />}
       data-ga-event-category={userLanguage === 'en' ? undefined : 'l10n'}
       data-ga-event-action={userLanguage === 'en' ? undefined : 'edit-button'}
       data-ga-event-label={userLanguage === 'en' ? undefined : userLanguage}
-      sx={{ '&:hover > span': { transform: 'translateX(-2px)' } }}
+      sx={(theme) => ({
+        ml: { md: -1, lg: 0 },
+        mb: 2,
+        fontWeight: 500,
+        fontSize: theme.typography.pxToRem(12.5),
+        color: 'primary.600',
+        '& svg': {
+          width: 14,
+          height: 14,
+        },
+        ...theme.applyDarkStyles({
+          color: 'primary.300',
+        }),
+      })}
     >
       {t('editPage')}
     </Button>

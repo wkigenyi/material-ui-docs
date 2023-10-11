@@ -34,8 +34,7 @@ export type IconImageProps = {
     | 'companies/patreon'
     | 'companies/ebay'
     | 'companies/samsung'
-    | 'companies/volvo'
-    | string;
+    | 'companies/volvo';
   height?: number;
   mode?: '' | 'light' | 'dark';
   sx?: SxProps<Theme>;
@@ -51,8 +50,10 @@ export default function IconImage(props: IconImageProps) {
   const theme = useTheme();
   const [firstRender, setFirstRender] = React.useState(true);
   React.useEffect(() => {
-    setFirstRender(false);
-    neverHydrated = false;
+    if (neverHydrated) {
+      setFirstRender(false);
+      neverHydrated = false;
+    }
   }, []);
   let defaultWidth;
   let defaultHeight;

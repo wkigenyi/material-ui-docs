@@ -21,6 +21,7 @@ import { pageToTitleI18n } from 'docs/src/modules/utils/helpers';
 import PageContext from 'docs/src/modules/components/PageContext';
 import { useTranslate } from 'docs/src/modules/utils/i18n';
 import MuiProductSelector from 'docs/src/modules/components/MuiProductSelector';
+import LogoText from 'docs/src/components/LogoText';
 
 // TODO: Collapse should expose an API to customize the duration based on the height.
 function transitionTheme(theme) {
@@ -211,7 +212,13 @@ function renderNavItems(options) {
   const { pages, ...params } = options;
 
   return (
-    <List>{pages.reduce((items, page) => reduceChildRoutes({ items, page, ...params }), [])}</List>
+    <List>
+      {pages.reduce(
+        // eslint-disable-next-line @typescript-eslint/no-use-before-define
+        (items, page) => reduceChildRoutes({ items, page, ...params }),
+        [],
+      )}
+    </List>
   );
 }
 
@@ -395,26 +402,28 @@ export default function AppNavDrawer(props) {
     return (
       <React.Fragment>
         <ToolbarDiv>
-          <NextLink href="/" passHref legacyBehavior>
+
             <Box
-              component="a"
+              component={NextLink}
+              href={"/"}
               onClick={onClose}
               aria-label={t('goToHome')}
               sx={{
                 pr: '12px',
                 mr: '4px',
-                borderRight: '1px solid',
+                /* borderRight: '1px solid', */
                 borderColor: 'divider',
+                textDecoration:"none"
               }}
             >
-              <SvgMuiLogomark width={30} />
+              <LogoText />
             </Box>
-          </NextLink>
-          <ProductIdentifier
+
+          {/* <ProductIdentifier
             name={productIdentifier.name}
             metadata={productIdentifier.metadata}
             versionSelector={renderVersionSelector(productIdentifier.versions)}
-          />
+          /> */}
         </ToolbarDiv>
         <Divider />
         <Box

@@ -275,11 +275,10 @@ export default function ApiPage(props) {
           className="MuiCallout-root MuiCallout-info"
           dangerouslySetInnerHTML={{ __html: refHint }}
         />
-        <Divider />
         {inheritance && (
           <React.Fragment>
             <Heading hash="inheritance" level="h3" />
-            <p
+            <span
               dangerouslySetInnerHTML={{
                 __html: t('api-docs.inheritanceDescription')
                   .replace(/{{component}}/, inheritance.component)

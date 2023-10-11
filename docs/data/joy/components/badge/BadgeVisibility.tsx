@@ -24,6 +24,7 @@ export default function BadgeVisibility() {
         checked={invisible}
         onChange={(event) => setInvisible(event.target.checked)}
         variant={invisible ? 'solid' : 'outlined'}
+        sx={{ '--Switch-trackWidth': '40px' }}
       />
     </Box>
   );

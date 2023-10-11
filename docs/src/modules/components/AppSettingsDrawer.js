@@ -1,10 +1,10 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
-import { styled, useTheme } from '@mui/material/styles';
+import { styled, /* useTheme */ } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import Drawer from '@mui/material/Drawer';
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
+// import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
@@ -14,8 +14,8 @@ import CloseIcon from '@mui/icons-material/Close';
 import LightModeIcon from '@mui/icons-material/LightMode';
 import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined';
 import SettingsBrightnessIcon from '@mui/icons-material/SettingsBrightness';
-import FormatTextdirectionLToRIcon from '@mui/icons-material/FormatTextdirectionLToR';
-import FormatTextdirectionRToLIcon from '@mui/icons-material/FormatTextdirectionRToL';
+// import FormatTextdirectionLToRIcon from '@mui/icons-material/FormatTextdirectionLToR';
+// import FormatTextdirectionRToLIcon from '@mui/icons-material/FormatTextdirectionRToL';
 import { useChangeTheme } from 'docs/src/modules/components/ThemeContext';
 import { useTranslate } from 'docs/src/modules/utils/i18n';
 
@@ -40,7 +40,7 @@ const IconToggleButton = styled(ToggleButton)({
 function AppSettingsDrawer(props) {
   const { onClose, open = false, ...other } = props;
   const t = useTranslate();
-  const upperTheme = useTheme();
+  // const upperTheme = useTheme();
   const changeTheme = useChangeTheme();
   const [mode, setMode] = React.useState(null);
   const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
@@ -81,13 +81,13 @@ function AppSettingsDrawer(props) {
     }
   };
 
-  const handleChangeDirection = (event, direction) => {
+  /* const handleChangeDirection = (event, direction) => {
     if (direction === null) {
       direction = upperTheme.direction;
     }
 
     changeTheme({ direction });
-  };
+  }; */
 
   return (
     <Drawer
@@ -149,10 +149,10 @@ function AppSettingsDrawer(props) {
             {t('settings.dark')}
           </IconToggleButton>
         </ToggleButtonGroup>
-        <Heading gutterBottom id="settings-direction">
+        {/* <Heading gutterBottom id="settings-direction">
           {t('settings.direction')}
-        </Heading>
-        <ToggleButtonGroup
+        </Heading> */}
+        {/* <ToggleButtonGroup
           exclusive
           value={upperTheme.direction}
           onChange={handleChangeDirection}
@@ -178,8 +178,8 @@ function AppSettingsDrawer(props) {
             <FormatTextdirectionRToLIcon fontSize="small" />
             {t('settings.rtl')}
           </IconToggleButton>
-        </ToggleButtonGroup>
-        <Heading gutterBottom>{t('settings.color')}</Heading>
+        </ToggleButtonGroup> */}
+        {/* <Heading gutterBottom>{t('settings.color')}</Heading>
         <Button
           component="a"
           href="/material-ui/customization/color/#playground"
@@ -190,7 +190,7 @@ function AppSettingsDrawer(props) {
           fullWidth
         >
           {t('settings.editWebsiteColors')}
-        </Button>
+        </Button> */}
       </Box>
     </Drawer>
   );

@@ -4,12 +4,12 @@ import Divider from '@mui/material/Divider';
 import Head from 'docs/src/modules/components/Head';
 import AppHeader from 'docs/src/layouts/AppHeader';
 import Hero from 'docs/src/components/home/Hero';
-import References, { CORE_CUSTOMERS } from 'docs/src/components/home/References';
+import References from 'docs/src/components/home/References';
 import ProductSuite from 'docs/src/components/home/ProductSuite';
 import ValueProposition from 'docs/src/components/home/ValueProposition';
-import DesignSystemComponents from 'docs/src/components/home/DesignSystemComponents';
+// import DesignSystemComponents from 'docs/src/components/home/DesignSystemComponents';
 import Testimonials from 'docs/src/components/home/Testimonials';
-import Sponsors from 'docs/src/components/home/Sponsors';
+// import Sponsors from 'docs/src/components/home/Sponsors';
 import HeroEnd from 'docs/src/components/home/HeroEnd';
 import AppFooter from 'docs/src/layouts/AppFooter';
 import BrandingCssVarsProvider from 'docs/src/BrandingCssVarsProvider';
@@ -20,10 +20,10 @@ export default function Home() {
   return (
     <BrandingCssVarsProvider>
       <Head
-        title="MUI: The React component library you always wanted"
-        description="MUI provides a simple, customizable, and accessible library of React components. Follow your own design system, or start with Material Design."
+        title="BANKAYO: Customizable software for Microfinance and SACCOs"
+        description="BANKAYO provides an intuitive interface for building and managing Microfinance products"
       >
-        <script
+        {/* <script
           type="application/ld+json"
           // eslint-disable-next-line react/no-danger
           dangerouslySetInnerHTML={{
@@ -40,7 +40,7 @@ export default function Home() {
               ],
             }),
           }}
-        />
+        /> */}
       </Head>
       <NoSsr>
         <NewsletterToast />
@@ -49,18 +49,18 @@ export default function Home() {
       <AppHeader />
       <main id="main-content">
         <Hero />
-        <References companies={CORE_CUSTOMERS} />
-        <Divider />
+        <References /* companies={CORE_CUSTOMERS} */ /> 
+        <Divider sx={{mt:6}} /> 
         <ProductSuite />
-        <Divider />
+        <Divider /> 
         <ValueProposition />
         <Divider />
-        <DesignSystemComponents />
-        <Divider />
+        {/* <DesignSystemComponents />
+        <Divider /> */}
         <Testimonials />
         <Divider />
-        <Sponsors />
-        <Divider />
+        {/* <Sponsors />
+        <Divider /> */}
         <HeroEnd />
         <Divider />
       </main>

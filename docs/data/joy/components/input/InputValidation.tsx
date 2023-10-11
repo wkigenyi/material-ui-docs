@@ -12,7 +12,11 @@ export default function InputValidation() {
       <Input placeholder="Type in here…" error defaultValue="Oh no, error found!" />
       <FormControl error>
         <FormLabel>Label</FormLabel>
-        <Input placeholder="Type in here…" defaultValue="Oh no, error found!" />
+        <Input
+          placeholder="Type in here…"
+          error
+          defaultValue="Oh no, error found!"
+        />
         <FormHelperText>
           <InfoOutlined />
           Opps! something is wrong.

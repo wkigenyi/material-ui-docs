@@ -12,7 +12,7 @@ export default function Highlighter({
   selectedBg?: 'white' | 'comfort';
   selected?: boolean;
 } & ButtonBaseProps) {
-  const ref = React.useRef<HTMLButtonElement>(null);
+  const ref = React.useRef<null | HTMLButtonElement>(null);
   return (
     <ButtonBase
       component="span"
@@ -45,16 +45,15 @@ export default function Highlighter({
           transitionProperty: 'all',
           transitionDuration: '150ms',
           color: 'primary.300',
-          overflow: 'auto',
           ...((!disableBorder || selected) && {
             borderColor: 'grey.100',
           }),
           ...(selected && {
-            bgcolor: `${alpha(theme.palette.primary[50], 0.5)}`,
+            bgcolor: '#FFF',
             borderColor: 'primary.300',
-            boxShadow: `0px 1px 4px ${
-              (theme.vars || theme).palette.primary[200]
-            }, inset 0px 2px 4px ${alpha(theme.palette.primary[100], 0.5)}`,
+            boxShadow: `0px 1px 6px ${
+              (theme.vars || theme).palette.primary[100]
+            }, inset 0px 2px 8px ${(theme.vars || theme).palette.grey[50]}`,
             color: 'primary.500',
           }),
           ...(!selected && {
@@ -69,24 +68,24 @@ export default function Highlighter({
           ...theme.applyDarkStyles({
             color: 'primary.800',
             ...((!disableBorder || selected) && {
-              borderColor: `${alpha(theme.palette.primaryDark[600], 0.3)}`,
+              borderColor: 'primaryDark.700',
+            }),
+            ...(selected && {
+              bgcolor: `${alpha(theme.palette.primary[900], 0.3)}`,
+              borderColor: 'primary.700',
+              color: 'primary.300',
+              boxShadow: `0px 1px 6px ${
+                (theme.vars || theme).palette.primary[800]
+              }, inset 0px 2px 8px ${(theme.vars || theme).palette.primaryDark[800]}`,
             }),
             ...(!selected && {
               '&:hover, &:focus': {
-                bgcolor: `${alpha(theme.palette.primary[800], 0.1)}`,
-                borderColor: `${alpha(theme.palette.primary[500], 0.3)}`,
+                bgcolor: 'primaryDark.800',
+                borderColor: 'primaryDark.700',
                 '@media (hover: none)': {
                   bgcolor: 'transparent',
                 },
               },
-            }),
-            ...(selected && {
-              bgcolor: `${alpha(theme.palette.primary[800], 0.3)}`,
-              borderColor: 'primary.700',
-              color: 'primary.300',
-              boxShadow: `0px 1px 4px ${
-                (theme.vars || theme).palette.primary[900]
-              }, inset 0px 2px 4px ${(theme.vars || theme).palette.primaryDark[800]}`,
             }),
           }),
           '&.Mui-disabled': {

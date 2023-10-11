@@ -1,33 +1,34 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
-import Divider from '@mui/material/Divider';
+// import Divider from '@mui/material/Divider';
 import Typography from '@mui/material/Typography';
-import IconButton from '@mui/material/IconButton';
+// import IconButton from '@mui/material/IconButton';
 import Stack from '@mui/material/Stack';
-import TwitterIcon from '@mui/icons-material/Twitter';
-import GitHubIcon from '@mui/icons-material/GitHub';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import YouTubeIcon from '@mui/icons-material/YouTube';
-import RssFeedIcon from '@mui/icons-material/RssFeed';
-import { alpha } from '@mui/material/styles';
-import SvgMuiLogotype from 'docs/src/icons/SvgMuiLogotype';
-import EmailSubscribe from 'docs/src/components/footer/EmailSubscribe';
-import ROUTES from 'docs/src/route';
-import DiscordIcon from 'docs/src/icons/DiscordIcon';
+// import TwitterIcon from '@mui/icons-material/Twitter';
+// import GitHubIcon from '@mui/icons-material/GitHub';
+// import LinkedInIcon from '@mui/icons-material/LinkedIn';
+// import YouTubeIcon from '@mui/icons-material/YouTube';
+// import RssFeedIcon from '@mui/icons-material/RssFeed';
+// import { alpha } from '@mui/material/styles';
+// import SvgMuiLogotype from 'docs/src/icons/SvgMuiLogotype';
+// import EmailSubscribe from 'docs/src/components/footer/EmailSubscribe';
+/// import ROUTES from 'docs/src/route';
+// import DiscordIcon from 'docs/src/icons/DiscordIcon';
 import Link from 'docs/src/modules/components/Link';
-import SvgStackOverflow from 'docs/src/icons/SvgStackOverflow';
+import LogoText from '../components/LogoText';
+// import SvgStackOverflow from 'docs/src/icons/SvgStackOverflow';
 
-interface AppFooterProps {
+/* interface AppFooterProps {
   stackOverflowUrl?: string;
-}
+} */
 
-export default function AppFooter(props: AppFooterProps) {
-  const { stackOverflowUrl } = props;
+export default function AppFooter(/* props: AppFooterProps */) {
+  // const { stackOverflowUrl } = props;
 
   return (
     <Container component="footer">
-      <Box
+      {/* <Box
         sx={{
           py: { xs: 4, sm: 8 },
           display: 'grid',
@@ -49,7 +50,7 @@ export default function AppFooter(props: AppFooterProps) {
           },
         }}
       >
-        <div>
+         <div>
           <Typography variant="body2" fontWeight="bold">
             Keep up to date
           </Typography>
@@ -57,7 +58,7 @@ export default function AppFooter(props: AppFooterProps) {
             Join our newsletter for regular updates. No spam ever.
           </Typography>
           <EmailSubscribe sx={{ mb: 4 }} />
-        </div>
+        </div> 
         <Box
           sx={{
             display: 'grid',
@@ -66,7 +67,7 @@ export default function AppFooter(props: AppFooterProps) {
             gap: 2,
           }}
         >
-          <Box sx={{ display: 'flex', flexDirection: 'column' }}>
+           <Box sx={{ display: 'flex', flexDirection: 'column' }}>
             <Typography fontWeight="bold" variant="body2" sx={{ mb: 0.5 }}>
               Products
             </Typography>
@@ -76,8 +77,8 @@ export default function AppFooter(props: AppFooterProps) {
             <Link href={ROUTES.productTemplates}>Templates</Link>
             <Link href={ROUTES.productDesignKits}>Design kits</Link>
             <Link href={ROUTES.productToolpad}>MUI Toolpad</Link>
-          </Box>
-          <Box sx={{ display: 'flex', flexDirection: 'column' }}>
+          </Box> 
+           <Box sx={{ display: 'flex', flexDirection: 'column' }}>
             <Typography fontWeight="bold" variant="body2" sx={{ mb: 0.5 }}>
               Resources
             </Typography>
@@ -86,8 +87,8 @@ export default function AppFooter(props: AppFooterProps) {
             <Link href={ROUTES.components}>Components</Link>
             <Link href={ROUTES.customization}>Customization</Link>
             <Link href={ROUTES.theming}>Theming</Link>
-          </Box>
-          <Box sx={{ display: 'flex', flexDirection: 'column' }}>
+          </Box> 
+           <Box sx={{ display: 'flex', flexDirection: 'column' }}>
             <Typography fontWeight="bold" variant="body2" sx={{ mb: 0.5 }}>
               Explore
             </Typography>
@@ -95,9 +96,9 @@ export default function AppFooter(props: AppFooterProps) {
             <Link href={ROUTES.store}>Store</Link>
             <Link href={ROUTES.blog}>Blog</Link>
             <Link href={ROUTES.showcase}>Showcase</Link>
-            <Link href={ROUTES.xRoadmap}>Roadmap</Link>
-          </Box>
-          <Box sx={{ display: 'flex', flexDirection: 'column' }}>
+            <Link href={ROUTES.roadmap}>Roadmap</Link>
+          </Box> 
+           <Box sx={{ display: 'flex', flexDirection: 'column' }}>
             <Typography fontWeight="bold" variant="body2" sx={{ mb: 0.5 }}>
               Company
             </Typography>
@@ -137,18 +138,16 @@ export default function AppFooter(props: AppFooterProps) {
             <Link target="_blank" rel="noopener noreferrer" href="mailto:contact@mui.com">
               Contact us
             </Link>
-          </Box>
+          </Box> 
         </Box>
-      </Box>
-      <Divider />
+      </Box> */}
+      {/* <Divider /> */}
       <Box
         sx={{
-          my: 4,
-          display: 'flex',
-          flexDirection: { xs: 'column', sm: 'row' },
+          my: 6,
+          display: { xs: 'block', sm: 'flex' },
           alignItems: { sm: 'center' },
           justifyContent: { sm: 'space-between' },
-          gap: { xs: 2, sm: 1 },
         }}
       >
         <Box
@@ -160,86 +159,88 @@ export default function AppFooter(props: AppFooterProps) {
           }}
         >
           <Link href="/" aria-label="Go to homepage">
-            <SvgMuiLogotype height={28} width={91} />
+            <LogoText />
           </Link>
           <Typography color="text.tertiary" variant="caption" fontWeight={400}>
-            Copyright © {new Date().getFullYear()} Material UI SAS, trading as MUI.
+            Copyright © {new Date().getFullYear()} BANKAYO.
           </Typography>
         </Box>
-        <Stack spacing={1} direction="row" flexWrap="wrap" useFlexGap>
-          <IconButton
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://github.com/mui"
-            aria-label="github"
-            title="GitHub"
-            size="small"
-          >
-            <GitHubIcon fontSize="small" />
-          </IconButton>
-          <IconButton
-            target="_blank"
-            rel="noopener noreferrer"
-            href={ROUTES.rssFeed}
-            aria-label="RSS Feed"
-            title="RSS Feed"
-            size="small"
-          >
-            <RssFeedIcon fontSize="small" />
-          </IconButton>
-          <IconButton
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://twitter.com/MUI_hq"
-            aria-label="twitter"
-            title="Twitter"
-            size="small"
-          >
-            <TwitterIcon fontSize="small" />
-          </IconButton>
-          <IconButton
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://www.linkedin.com/company/mui/"
-            aria-label="linkedin"
-            title="LinkedIn"
-            size="small"
-          >
-            <LinkedInIcon fontSize="small" />
-          </IconButton>
-          <IconButton
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://www.youtube.com/@MUI_hq"
-            aria-label="YouTube"
-            title="YouTube"
-            size="small"
-          >
-            <YouTubeIcon fontSize="small" />
-          </IconButton>
-          <IconButton
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://mui.com/r/discord/"
-            aria-label="Discord"
-            title="Discord"
-            size="small"
-          >
-            <DiscordIcon fontSize="small" />
-          </IconButton>
-          {stackOverflowUrl ? (
+        <Box sx={{ mt: { xs: 3, sm: 0 } }}>
+          <Stack spacing={2} direction="row">
+            {/* <IconButton
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://github.com/mui"
+              aria-label="github"
+              title="GitHub"
+              size="small"
+            >
+              <GitHubIcon fontSize="small" />
+            </IconButton>
             <IconButton
               target="_blank"
               rel="noopener noreferrer"
-              href={stackOverflowUrl}
-              aria-label="Stack Overflow"
-              title="Stack Overflow"
+              href={ROUTES.rssFeed}
+              aria-label="RSS Feed"
+              title="RSS Feed"
               size="small"
             >
-              <SvgStackOverflow fontSize="small" />
+              <RssFeedIcon fontSize="small" />
             </IconButton>
-          ) : null}
-        </Stack>
+            <IconButton
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://twitter.com/MUI_hq"
+              aria-label="twitter"
+              title="Twitter"
+              size="small"
+            >
+              <TwitterIcon fontSize="small" />
+            </IconButton>
+            <IconButton
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://www.linkedin.com/company/mui/"
+              aria-label="linkedin"
+              title="LinkedIn"
+              size="small"
+            >
+              <LinkedInIcon fontSize="small" />
+            </IconButton> */}
+            {/* <IconButton
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://www.youtube.com/@MUI_hq"
+              aria-label="YouTube"
+              title="YouTube"
+              size="small"
+            >
+              <YouTubeIcon fontSize="small" />
+            </IconButton> */}
+            {/* <IconButton
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://mui.com/r/discord/"
+              aria-label="Discord"
+              title="Discord"
+              size="small"
+            >
+              <DiscordIcon fontSize="small" />
+            </IconButton>
+            {stackOverflowUrl ? (
+              <IconButton
+                target="_blank"
+                rel="noopener noreferrer"
+                href={stackOverflowUrl}
+                aria-label="Stack Overflow"
+                title="Stack Overflow"
+                size="small"
+              >
+                <SvgStackOverflow fontSize="small" />
+              </IconButton>
+            ) : null} */}
+          </Stack>
+        </Box>
       </Box>
     </Container>
   );

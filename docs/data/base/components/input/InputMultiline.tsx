@@ -8,11 +8,7 @@ const CustomInput = React.forwardRef(function CustomInput(
 ) {
   return (
     <Input
-      slots={{
-        root: StyledRootDiv,
-        input: StyledInputElement,
-        textarea: StyledTextareaElement,
-      }}
+      slots={{ input: StyledInputElement, textarea: StyledTextareaElement }}
       {...props}
       ref={ref}
     />
@@ -45,11 +41,6 @@ const grey = {
   800: '#2D3843',
   900: '#1A2027',
 };
-
-const StyledRootDiv = styled('div')`
-  display: flex;
-  max-width: 100%;
-`;
 
 const StyledInputElement = styled('input')(
   ({ theme }) => `

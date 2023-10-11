@@ -1,5 +1,4 @@
 <Switch
-  size="lg"
   slotProps={{
     input: { 'aria-label': 'Dark mode' },
     thumb: {
@@ -7,6 +6,6 @@
     },
   }}
   sx={{
-    '--Switch-thumbSize': '16px',
+    '--Switch-thumbSize': '28px',
   }}
 />

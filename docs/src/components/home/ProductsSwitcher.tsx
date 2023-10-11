@@ -2,12 +2,18 @@ import * as React from 'react';
 import dynamic from 'next/dynamic';
 import { Theme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
+import CreditScoreIcon from '@mui/icons-material/CreditScore'
+import CreditCardOffIcon from '@mui/icons-material/CreditCardOff'
+import PieChartIcon from '@mui/icons-material/PieChart'
+import AssessmentIcon from '@mui/icons-material/Assessment'
+import TuneIcon from '@mui/icons-material/Tune'
+import SavingsIcon from '@mui/icons-material/Savings'
 import { visuallyHidden } from '@mui/utils';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import Typography from '@mui/material/Typography';
 import Stack from '@mui/material/Stack';
 import KeyboardArrowRightRounded from '@mui/icons-material/KeyboardArrowRightRounded';
-import IconImage from 'docs/src/components/icon/IconImage';
+// import IconImage from 'docs/src/components/icon/IconImage';
 import Highlighter from 'docs/src/components/action/Highlighter';
 import Link from 'docs/src/modules/components/Link';
 import ROUTES from 'docs/src/route';
@@ -94,37 +100,53 @@ export default function ProductsSwitcher(props: {
   const isBelowMd = useMediaQuery((theme: Theme) => theme.breakpoints.down('md'));
   const productElements = [
     <ProductItem
-      label="by going to the Core components page"
-      icon={<IconImage name="product-core" />}
-      name="MUI Core"
-      description="Foundational components for shipping features faster. Includes Material UI."
+      label="by going to the loan products page"
+      icon={<CreditScoreIcon/>}
+      name="Customizable Loan Products"
+      description="Loan products are the templates on which your client/group loans are based."
       href={ROUTES.productCore}
     />,
     <ProductItem
-      label="by going to the Advanced components page"
-      icon={<IconImage name="product-advanced" />}
+      label="by going to savings products page"
+      icon={<SavingsIcon />}
       name={
         <Box component="span" sx={{ display: 'inline-flex', alignItems: 'center' }}>
-          MUI X
+          Savings Products
         </Box>
       }
-      description="Advanced components for complex use cases."
+      description="Savings products define templates for your clients savings accounts."
       href={ROUTES.productAdvanced}
     />,
     <ProductItem
       label="by going to the templates page"
-      icon={<IconImage name="product-templates" />}
-      name="Templates"
-      description="Professionally designed UI layouts to jumpstart your next project."
+      icon={<PieChartIcon />}
+      name="Share products"
+      description="Define templates for your share accounts"
       href={ROUTES.productTemplates}
     />,
     <ProductItem
       label="by going to the design-kits page"
-      icon={<IconImage name="product-designkits" />}
-      name="Design kits"
-      description="Bring our components to your favorite design tool."
+      icon={<CreditCardOffIcon />}
+      name="Product Charges"
+      description="Configure your product charges"
       href={ROUTES.productDesignKits}
     />,
+    <ProductItem
+      label="by going to the design-kits page"
+      icon={<AssessmentIcon />}
+      name="Robust Accounting & Reporting"
+      description="Accounting tools to streamline your financial reporting"
+      href={ROUTES.productDesignKits}
+    />,
+    
+    <ProductItem
+      label="by going to the design-kits page"
+      icon={<TuneIcon />}
+      name="All the needed customizations"
+      description="Generate transaction reciepts, Customer Self Help App"
+      href={ROUTES.productDesignKits}
+    />,
+    
   ];
   return (
     <React.Fragment>

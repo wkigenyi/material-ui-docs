@@ -1,4 +1,3 @@
-/* eslint-disable material-ui/straight-quotes */
 import * as React from 'react';
 import Avatar from '@mui/material/Avatar';
 import Box from '@mui/material/Box';

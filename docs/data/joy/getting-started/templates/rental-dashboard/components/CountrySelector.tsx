@@ -3,18 +3,20 @@ import Autocomplete from '@mui/joy/Autocomplete';
 import AutocompleteOption from '@mui/joy/AutocompleteOption';
 import AspectRatio from '@mui/joy/AspectRatio';
 import FormControl, { FormControlProps } from '@mui/joy/FormControl';
-import FormLabel from '@mui/joy/FormLabel';
 import ListItemDecorator from '@mui/joy/ListItemDecorator';
 import Typography from '@mui/joy/Typography';
 
 export default function ContrySelector({ sx, ...props }: FormControlProps) {
   return (
-    <FormControl {...props} sx={sx}>
-      <FormLabel>Country</FormLabel>
+    <FormControl
+      {...props}
+      sx={[{ display: { sm: 'contents' } }, ...(Array.isArray(sx) ? sx : [sx])]}
+    >
       <Autocomplete
+        aria-label="Country"
         autoHighlight
         isOptionEqualToValue={(option, value) => option.code === value.code}
-        defaultValue={{ code: 'AU', label: 'Australia', phone: '61' }}
+        defaultValue={{ code: 'US', label: 'United States', phone: '1' }}
         options={countries}
         renderOption={(optionProps, option) => (
           <AutocompleteOption {...optionProps}>

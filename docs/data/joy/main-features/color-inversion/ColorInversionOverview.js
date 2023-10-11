@@ -29,7 +29,9 @@ export default function ColorInversionOverview() {
       >
         <BookmarkOutlinedIcon />
       </IconButton>
-      <Typography level="h3">Learn how to build super fast websites.</Typography>
+      <Typography fontSize="xl2" fontWeight="lg">
+        Learn how to build super fast websites.
+      </Typography>
       <Button variant="solid" endDecorator={<KeyboardArrowRightIcon />}>
         Read more
       </Button>

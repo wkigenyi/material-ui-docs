@@ -12,7 +12,6 @@ import ShowChartRounded from '@mui/icons-material/ShowChartRounded';
 import BarChartRounded from '@mui/icons-material/BarChartRounded';
 import FileUploadRounded from '@mui/icons-material/FileUploadRounded';
 import PendingActionsRounded from '@mui/icons-material/PendingActions';
-import InsertDriveFileOutlined from '@mui/icons-material/InsertDriveFileOutlined';
 import SpeedRounded from '@mui/icons-material/SpeedRounded';
 import { alpha } from '@mui/material/styles';
 import ROUTES from 'docs/src/route';
@@ -36,7 +35,7 @@ export default function XRoadmap() {
               content: '""',
               display: 'block',
               position: 'absolute',
-              width: 1.5,
+              width: 2,
               bgcolor: 'primaryDark.500',
               top: 24,
               bottom: 10,
@@ -52,16 +51,25 @@ export default function XRoadmap() {
   const bullet = (
     <Box
       sx={{
-        ml: 1.3,
+        ml: 1,
         mr: -2,
         display: 'flex',
         alignItems: 'center',
         '&:before': {
           content: '""',
           display: 'block',
-          height: 1.5,
+          height: 2,
           width: 15,
           bgcolor: 'primaryDark.500',
+        },
+        '&:after': {
+          content: '""',
+          width: 6,
+          height: 6,
+          bgcolor: 'warning.500',
+          borderRadius: '50%',
+          display: 'block',
+          marginRight: 1.5,
         },
       }}
     />
@@ -90,7 +98,7 @@ export default function XRoadmap() {
               />
               <Button
                 component={Link}
-                href={ROUTES.xRoadmap}
+                href={ROUTES.roadmap}
                 noLinkStyle
                 size="large"
                 variant="contained"
@@ -132,11 +140,7 @@ export default function XRoadmap() {
                     <TableChartRounded fontSize="small" />
                     <b>Data Grid</b>
                     <DateRangeRounded fontSize="small" />
-                    <b>Date and Time Pickers</b>
-                    <BarChartRounded fontSize="small" />
-                    <b>Charts</b>
-                    <AccountTreeRounded fontSize="small" />
-                    <b>Tree View</b>
+                    <b>Date Picker</b>
                   </React.Fragment>,
                 )}
               </Paper>
@@ -160,30 +164,13 @@ export default function XRoadmap() {
                     </Box>
                     <b>Data Grid</b>
                     {bullet}
-                    <b>Pivoting</b>
-                    {bullet}
                     <b>Charts integration</b>
+                    {bullet}
+                    <b>Pivoting</b>
                     {bullet}
                     <Link href={ROUTES.dataGridFeaturesComparison} sx={{ color: 'primary.300' }}>
                       And more!
                     </Link>
-                  </React.Fragment>,
-                  true,
-                )}
-                {renderList(
-                  <React.Fragment>
-                    <Box
-                      sx={{
-                        lineHeight: 0,
-                      }}
-                    >
-                      <AccountTreeRounded fontSize="small" />
-                    </Box>
-                    <b>Tree View</b>
-                    {bullet}
-                    <b>Virtualization</b>
-                    {bullet}
-                    <b>Drag and Drop</b>
                   </React.Fragment>,
                   true,
                 )}
@@ -201,8 +188,10 @@ export default function XRoadmap() {
                   <React.Fragment>
                     <ShowChartRounded fontSize="small" />
                     <b>Sparkline</b>
-                    <InsertDriveFileOutlined fontSize="small" />
-                    <b>Rich Text Editor</b>
+                    <BarChartRounded fontSize="small" />
+                    <b>Charts</b>
+                    <AccountTreeRounded fontSize="small" />
+                    <b>Tree View</b>
                     <FileUploadRounded fontSize="small" />
                     <b>Upload</b>
                     <PendingActionsRounded fontSize="small" />

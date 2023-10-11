@@ -3,20 +3,13 @@ import Box from '@mui/joy/Box';
 import Button from '@mui/joy/Button';
 import IconButton, { iconButtonClasses } from '@mui/joy/IconButton';
 import Typography from '@mui/joy/Typography';
-import ArrowBackIosRoundedIcon from '@mui/icons-material/ArrowBackIosRounded';
-import ArrowForwardIosRoundedIcon from '@mui/icons-material/ArrowForwardIosRounded';
 
 export default function Pagination() {
   return (
     <div>
       <Box
         className="Pagination-mobile"
-        sx={{
-          display: { xs: 'flex', md: 'none' },
-          alignItems: 'center',
-          mx: 2,
-          my: 1,
-        }}
+        sx={{ display: { xs: 'flex', md: 'none' }, alignItems: 'center' }}
       >
         <IconButton
           aria-label="previous page"
@@ -24,7 +17,7 @@ export default function Pagination() {
           color="neutral"
           size="sm"
         >
-          <ArrowBackIosRoundedIcon />
+          <i data-feather="arrow-left" />
         </IconButton>
         <Typography level="body-sm" mx="auto">
           Page 1 of 10
@@ -35,27 +28,26 @@ export default function Pagination() {
           color="neutral"
           size="sm"
         >
-          <ArrowForwardIosRoundedIcon />
+          <i data-feather="arrow-right" />
         </IconButton>
       </Box>
       <Box
         className="Pagination-laptopUp"
         sx={{
+          pt: 0.5,
           gap: 1,
           [`& .${iconButtonClasses.root}`]: { borderRadius: '50%' },
           display: {
             xs: 'none',
             md: 'flex',
           },
-          mx: 4,
-          my: 2,
         }}
       >
         <Button
           size="sm"
           variant="plain"
           color="neutral"
-          startDecorator={<ArrowBackIosRoundedIcon />}
+          startDecorator={<i data-feather="arrow-left" />}
         >
           Previous
         </Button>
@@ -65,7 +57,7 @@ export default function Pagination() {
           <IconButton
             key={page}
             size="sm"
-            variant={Number(page) ? 'plain' : 'soft'}
+            variant={Number(page) ? 'outlined' : 'plain'}
             color="neutral"
           >
             {page}
@@ -77,7 +69,7 @@ export default function Pagination() {
           size="sm"
           variant="plain"
           color="neutral"
-          endDecorator={<ArrowForwardIosRoundedIcon />}
+          endDecorator={<i data-feather="arrow-right" />}
         >
           Next
         </Button>

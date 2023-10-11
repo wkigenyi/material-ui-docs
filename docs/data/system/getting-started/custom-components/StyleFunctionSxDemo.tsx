@@ -1,5 +1,5 @@
 import * as React from 'react';
-import styled, { ThemeProvider, StyleFunction } from 'styled-components';
+import styled, { InterpolationFunction, ThemeProvider } from 'styled-components';
 import { unstable_styleFunctionSx, SxProps } from '@mui/system';
 import { createTheme } from '@mui/material/styles';
 
@@ -10,7 +10,7 @@ interface DivProps {
 const theme = createTheme();
 
 const Div = styled('div')<DivProps>(
-  unstable_styleFunctionSx as StyleFunction<DivProps>,
+  unstable_styleFunctionSx as InterpolationFunction<DivProps>,
 );
 
 export default function StyleFunctionSxDemo() {

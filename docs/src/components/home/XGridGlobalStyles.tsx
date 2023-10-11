@@ -125,7 +125,7 @@ export default function XGridGlobalStyles({
                 },
               },
               '& .MuiCheckbox-root': {
-                color: (theme.vars || theme).palette.primary[300],
+                color: (theme.vars || theme).palette.primary[400],
               },
               '& .MuiIconButton-root:not(.Mui-disabled)': {
                 color: (theme.vars || theme).palette.primary[300],
@@ -151,9 +151,9 @@ export default function XGridGlobalStyles({
                 '& .MuiIconButton-root': {
                   '&:not([disabled])': {
                     color: (theme.vars || theme).palette.primaryDark[100],
-                    borderColor: (theme.vars || theme).palette.primaryDark[400],
+                    borderColor: (theme.vars || theme).palette.primaryDark[300],
                   },
-                  borderColor: (theme.vars || theme).palette.primaryDark[600],
+                  borderColor: (theme.vars || theme).palette.primaryDark[500],
                 },
               },
             },

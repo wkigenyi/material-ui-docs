@@ -3,22 +3,21 @@ import PropTypes from 'prop-types';
 import { Select, selectClasses } from '@mui/base/Select';
 import { Option, optionClasses } from '@mui/base/Option';
 import { styled } from '@mui/system';
-import { Popper } from '@mui/base/Popper';
+import { Popper } from '@mui/base';
 
 export default function UnstyledSelectRichOptions() {
   return (
     <CustomSelect placeholder="Select country…">
-      {countries.map((country) => (
-        <StyledOption key={country.code} value={country.code} label={country.label}>
+      {countries.map((c) => (
+        <StyledOption key={c.code} value={c.code} label={c.label}>
           <img
             loading="lazy"
-            width={20}
-            height={14}
-            srcSet={`https://flagcdn.com/w40/${country.code.toLowerCase()}.png 2x`}
-            src={`https://flagcdn.com/w20/${country.code.toLowerCase()}.png`}
-            alt={`Flag of ${country.label}`}
+            width="20"
+            srcSet={`https://flagcdn.com/w40/${c.code.toLowerCase()}.png 2x`}
+            src={`https://flagcdn.com/w20/${c.code.toLowerCase()}.png`}
+            alt={`Flag of ${c.label}`}
           />
-          {country.label} ({country.code}) +{country.phone}
+          {c.label} ({c.code}) +{c.phone}
         </StyledOption>
       ))}
     </CustomSelect>

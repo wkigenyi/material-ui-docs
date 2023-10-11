@@ -6,14 +6,7 @@ export default function LazyFocusTrap() {
   const [open, setOpen] = React.useState(false);
 
   return (
-    <Box
-      sx={{
-        display: 'flex',
-        alignItems: 'center',
-        flexDirection: 'column',
-        '& [tabindex]:focus': { outline: '1px solid green' },
-      }}
-    >
+    <Box sx={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
       <button type="button" onClick={() => setOpen(true)}>
         Open
       </button>

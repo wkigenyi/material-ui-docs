@@ -55,13 +55,14 @@ export default extendTheme({
     JoyInput: {
       styleOverrides: {
         root: ({ ownerState, theme }) => ({
-          ...(ownerState.variant === 'outlined' && {
-            [`&:not(.${inputClasses.focused}):hover::before`]: {
-              boxShadow: `inset 0 0 0 2px ${
-                theme.vars.palette?.[ownerState.color!]?.outlinedBorder
-              }`,
-            },
-          }),
+          ...(ownerState.variant === 'outlined' &&
+            ownerState.color !== 'context' && {
+              [`&:not(.${inputClasses.focused}):hover::before`]: {
+                boxShadow: `inset 0 0 0 2px ${
+                  theme.vars.palette?.[ownerState.color!]?.outlinedBorder
+                }`,
+              },
+            }),
         }),
         input: {
           caretColor: 'var(--Input-focusedHighlight)',

@@ -17,12 +17,12 @@ export default function StartToday() {
           overline="Start now"
           title={
             <Typography variant="h2" sx={{ maxWidth: 460, mb: 1 }}>
-              Ship your next project <GradientText>faster</GradientText>
+              Move your manual workflow into a digital bank  <GradientText>faster</GradientText>
             </Typography>
           }
-          description="Find out why MUI's tools are trusted by thousands of open-source developers and teams around the world."
+          description="Let us work with you to change your ledger cards and excel workbooks into an efficient banking system"
         />
-        <GetStartedButtons primaryLabel="Discover the Core libraries" primaryUrl="/core/" />
+        <GetStartedButtons primaryLabel="Book A Demo Today" primaryUrl="/core/" />
       </Grid>
       <Grid item xs={12} sm={6} md={6} container spacing={2}>
         <Grid item xs={12} md={6}>
@@ -34,10 +34,10 @@ export default function StartToday() {
             sx={{ p: 2, height: '100%' }}
           >
             <Typography variant="body2" fontWeight="bold" sx={{ mb: 0.5 }}>
-              Showcase
+              Learn
             </Typography>
             <Typography variant="body2" color="text.secondary" sx={{ mb: 1 }}>
-              Check out some great examples of MUI&apos;s products in action.
+              Learn how to carry out common tasks in BANKAYO
             </Typography>
             <Typography
               color="primary"
@@ -65,7 +65,7 @@ export default function StartToday() {
               Blog
             </Typography>
             <Typography variant="body2" color="text.secondary" sx={{ mb: 1 }}>
-              Read the latest updates about our company and products.
+              Read the latest updates about BANKAYO.
             </Typography>
             <Typography
               color="primary"

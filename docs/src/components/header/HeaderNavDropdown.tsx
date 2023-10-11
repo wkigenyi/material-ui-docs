@@ -121,7 +121,7 @@ export default function HeaderNavDropdown() {
   const [open, setOpen] = React.useState(false);
   const [productsOpen, setProductsOpen] = React.useState(true);
   const [docsOpen, setDocsOpen] = React.useState(false);
-  const hambugerRef = React.useRef<HTMLButtonElement>(null);
+  const hambugerRef = React.useRef<HTMLButtonElement | null>(null);
   return (
     <React.Fragment>
       <IconButton
@@ -150,7 +150,7 @@ export default function HeaderNavDropdown() {
       </IconButton>
       <ClickAwayListener
         onClickAway={(event) => {
-          if (!hambugerRef.current!.contains(event.target as Node)) {
+          if (hambugerRef.current && !hambugerRef.current.contains(event.target as Node)) {
             setOpen(false);
           }
         }}
@@ -247,7 +247,7 @@ export default function HeaderNavDropdown() {
                   onClick={() => setDocsOpen((bool) => !bool)}
                   sx={{ justifyContent: 'space-between' }}
                 >
-                  Docs
+                  Learn
                   <KeyboardArrowDownRounded
                     color="primary"
                     sx={{
@@ -292,19 +292,19 @@ export default function HeaderNavDropdown() {
                   </UList>
                 </Collapse>
               </li>
-              <li>
+              {/* <li>
                 <Anchor href={ROUTES.pricing} as={Link} noLinkStyle>
                   Pricing
                 </Anchor>
-              </li>
+              </li> */}
               <li>
                 <Anchor href={ROUTES.about} as={Link} noLinkStyle>
                   About us
                 </Anchor>
               </li>
               <li>
-                <Anchor href={ROUTES.blog} as={Link} noLinkStyle>
-                  Blog
+                <Anchor href={ROUTES.contact} as={Link} noLinkStyle>
+                  Contact us
                 </Anchor>
               </li>
             </UList>

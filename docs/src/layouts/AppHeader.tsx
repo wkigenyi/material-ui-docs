@@ -4,16 +4,17 @@ import GlobalStyles from '@mui/material/GlobalStyles';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Container from '@mui/material/Container';
-import Tooltip from '@mui/material/Tooltip';
+/* import Tooltip from '@mui/material/Tooltip';
 import IconButton from '@mui/material/IconButton';
-import GitHubIcon from '@mui/icons-material/GitHub';
+import GitHubIcon from '@mui/icons-material/GitHub'; */
 import SvgMuiLogomark from 'docs/src/icons/SvgMuiLogomark';
 import HeaderNavBar from 'docs/src/components/header/HeaderNavBar';
 import HeaderNavDropdown from 'docs/src/components/header/HeaderNavDropdown';
 import ThemeModeToggle from 'docs/src/components/header/ThemeModeToggle';
 import Link from 'docs/src/modules/components/Link';
 import { DeferredAppSearch } from 'docs/src/modules/components/AppFrame';
-import { useTranslate } from 'docs/src/modules/utils/i18n';
+import LogoText from '../components/LogoText';
+/* import { useTranslate } from 'docs/src/modules/utils/i18n'; */
 
 const Header = styled('header')(({ theme }) => [
   {
@@ -33,14 +34,14 @@ const Header = styled('header')(({ theme }) => [
 
 const HEIGHT = 60;
 
-interface AppHeaderProps {
+/* interface AppHeaderProps {
   gitHubRepository?: string;
-}
+} */
 
-export default function AppHeader(props: AppHeaderProps) {
-  const { gitHubRepository = 'https://github.com/mui' } = props;
+export default function AppHeader(/* props: AppHeaderProps */) {
+  /* const { gitHubRepository = 'https://github.com/mui' } = props; */
 
-  const t = useTranslate();
+  /* const t = useTranslate(); */
 
   return (
     <Header>
@@ -53,7 +54,7 @@ export default function AppHeader(props: AppHeaderProps) {
       />
       <Container sx={{ display: 'flex', alignItems: 'center', minHeight: HEIGHT }}>
         <Box component={Link} href="/" aria-label="Go to homepage" sx={{ lineHeight: 0, mr: 2 }}>
-          <SvgMuiLogomark width={30} />
+          <LogoText/>
         </Box>
         <Box sx={{ display: { xs: 'none', md: 'initial' } }}>
           <HeaderNavBar />
@@ -61,7 +62,7 @@ export default function AppHeader(props: AppHeaderProps) {
         <Box sx={{ ml: 'auto' }} />
         <Stack direction="row" spacing={1}>
           <DeferredAppSearch />
-          <Tooltip title={t('appFrame.github')} enterDelay={300}>
+          {/* <Tooltip title={t('appFrame.github')} enterDelay={300}>
             <IconButton
               component="a"
               color="primary"
@@ -73,7 +74,7 @@ export default function AppHeader(props: AppHeaderProps) {
             >
               <GitHubIcon fontSize="small" />
             </IconButton>
-          </Tooltip>
+          </Tooltip> */}
           <ThemeModeToggle />
         </Stack>
         <Box sx={{ display: { md: 'none' }, ml: 1 }}>

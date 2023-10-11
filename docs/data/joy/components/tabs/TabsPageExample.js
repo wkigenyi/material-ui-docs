@@ -5,6 +5,9 @@ import Tabs from '@mui/joy/Tabs';
 import TabList from '@mui/joy/TabList';
 import Tab, { tabClasses } from '@mui/joy/Tab';
 import TabPanel from '@mui/joy/TabPanel';
+import Typography from '@mui/joy/Typography';
+import Input from '@mui/joy/Input';
+import SearchRounded from '@mui/icons-material/SearchRounded';
 
 export default function TabsPageExample() {
   const [index, setIndex] = React.useState(0);
@@ -12,8 +15,9 @@ export default function TabsPageExample() {
     <Box
       sx={{
         flexGrow: 1,
-        m: -2,
+        m: -3,
         overflowX: 'hidden',
+        borderRadius: 'md',
       }}
     >
       <Tabs
@@ -23,7 +27,7 @@ export default function TabsPageExample() {
       >
         <TabList
           sx={{
-            pt: 1,
+            pt: 2,
             justifyContent: 'center',
             [`&& .${tabClasses.root}`]: {
               flex: 'initial',
@@ -34,9 +38,9 @@ export default function TabsPageExample() {
               [`&.${tabClasses.selected}`]: {
                 color: 'primary.plainColor',
                 '&::after': {
-                  height: 2,
-                  borderTopLeftRadius: 3,
-                  borderTopRightRadius: 3,
+                  height: '3px',
+                  borderTopLeftRadius: '3px',
+                  borderTopRightRadius: '3px',
                   bgcolor: 'primary.500',
                 },
               },
@@ -49,6 +53,7 @@ export default function TabsPageExample() {
               size="sm"
               variant="soft"
               color={index === 0 ? 'primary' : 'neutral'}
+              sx={{ ml: 1 }}
             >
               14
             </Chip>
@@ -59,20 +64,12 @@ export default function TabsPageExample() {
               size="sm"
               variant="soft"
               color={index === 1 ? 'primary' : 'neutral'}
+              sx={{ ml: 1 }}
             >
-              20
+              24
             </Chip>
           </Tab>
-          <Tab indicatorInset>
-            Products{' '}
-            <Chip
-              size="sm"
-              variant="soft"
-              color={index === 2 ? 'primary' : 'neutral'}
-            >
-              8
-            </Chip>
-          </Tab>
+          <Tab indicatorInset>Search library</Tab>
         </TabList>
         <Box
           sx={(theme) => ({
@@ -82,9 +79,33 @@ export default function TabsPageExample() {
             clipPath: 'inset(0 -100vmax)',
           })}
         >
-          <TabPanel value={0}>Deals</TabPanel>
-          <TabPanel value={1}>Library</TabPanel>
-          <TabPanel value={2}>Products</TabPanel>
+          <TabPanel value={0}>
+            <Typography
+              level="h2"
+              component="div"
+              fontSize="lg"
+              textColor="text.primary"
+            >
+              Deals panel
+            </Typography>
+          </TabPanel>
+          <TabPanel value={1}>
+            <Typography
+              level="h2"
+              component="div"
+              fontSize="lg"
+              textColor="text.primary"
+            >
+              Library panel
+            </Typography>
+          </TabPanel>
+          <TabPanel value={2}>
+            <Input
+              autoFocus
+              placeholder="Type in third panel..."
+              startDecorator={<SearchRounded />}
+            />
+          </TabPanel>
         </Box>
       </Tabs>
     </Box>

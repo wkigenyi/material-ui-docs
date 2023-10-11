@@ -8,7 +8,7 @@ import NoSsr from '@mui/material/NoSsr';
 import Link from 'docs/src/modules/components/Link';
 import { useTranslate } from 'docs/src/modules/utils/i18n';
 import { samePageLinkNavigation } from 'docs/src/modules/components/MarkdownLinks';
-import TableOfContentsBanner from 'docs/src/components/banner/TableOfContentsBanner';
+// import TableOfContentsBanner from 'docs/src/components/banner/TableOfContentsBanner';
 import featureToggle from 'docs/src/featureToggle';
 import DiamondSponsors from 'docs/src/modules/components/DiamondSponsors';
 
@@ -235,7 +235,7 @@ export default function AppTableOfContents(props) {
 
   return (
     <Nav aria-label={t('pageTOC')}>
-      <TableOfContentsBanner />
+      {/* <TableOfContentsBanner /> */}
       <NoSsr>
         {showSurveyBanner && (
           <Link
@@ -351,7 +351,7 @@ export default function AppTableOfContents(props) {
           </NavList>
         </React.Fragment>
       ) : null}
-      <DiamondSponsors />
+      {/* <DiamondSponsors /> */}
     </Nav>
   );
 }

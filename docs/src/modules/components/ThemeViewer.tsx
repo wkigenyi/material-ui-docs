@@ -7,7 +7,6 @@ import CollapseIcon from '@mui/icons-material/ChevronRight';
 import { TreeView } from '@mui/x-tree-view/TreeView';
 import { TreeItem as MuiTreeItem, treeItemClasses } from '@mui/x-tree-view/TreeItem';
 import { lighten } from '@mui/material/styles';
-import { blue, blueDark } from 'docs/src/modules/brandingTheme';
 
 function getType(value: any) {
   if (Array.isArray(value)) {
@@ -100,18 +99,12 @@ function ObjectEntryLabel(props: { objectKey: string; objectValue: any }) {
 
 const TreeItem = styled(MuiTreeItem)({
   [`&:focus > .${treeItemClasses.content}`]: {
-    backgroundColor: lighten(blue[900], 0.05),
-    outline: `2px dashed ${lighten(blue[900], 0.3)}`,
+    backgroundColor: lighten('#333', 0.08),
+    outline: `2px dashed ${lighten('#333', 0.3)}`,
   },
   [`& .${treeItemClasses.content}`]: {
-    padding: 4,
-    borderRadius: '12px',
     '&:hover': {
-      backgroundColor: lighten(blueDark[900], 0.1),
-    },
-    [`& .${treeItemClasses.label}`]: {
-      fontFamily: 'Menlo, Consolas',
-      fontSize: '0.825rem',
+      backgroundColor: lighten('#333', 0.08),
     },
   },
 });
@@ -196,20 +189,13 @@ export default function ThemeViewer({
 
   return (
     <TreeView
+      sx={{ bgcolor: '#333', color: '#fff', borderRadius: 1, p: 1 }}
       key={key}
       defaultCollapseIcon={<ExpandIcon />}
       defaultEndIcon={<div style={{ width: 24 }} />}
       defaultExpanded={defaultExpanded}
       defaultExpandIcon={<CollapseIcon />}
       {...other}
-      sx={{
-        color: '#FFF',
-        p: 1.5,
-        bgcolor: '#0F1924', // one-off code container color
-        borderRadius: 3,
-        border: '1px solid',
-        borderColor: blueDark[700],
-      }}
     >
       {Object.keys(data).map((objectKey) => {
         return (

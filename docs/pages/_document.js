@@ -63,13 +63,13 @@ export default class MyDocument extends Document {
           {/* iOS Icon */}
           <link rel="apple-touch-icon" sizes="180x180" href="/static/icons/180x180.png" />
           {/* SEO */}
-          <link
+          {/* <link
             rel="canonical"
             href={`https://mui.com${
               userLanguage === 'en' ? '' : `/${userLanguage}`
             }${canonicalAsServer}`}
-          />
-          <link rel="alternate" href={`https://mui.com${canonicalAsServer}`} hrefLang="x-default" />
+          /> */}
+          {/* <link rel="alternate" href={`https://mui.com${canonicalAsServer}`} hrefLang="x-default" /> */}
           {/*
             Preconnect allows the browser to setup early connections before an HTTP request
             is actually sent to the server.

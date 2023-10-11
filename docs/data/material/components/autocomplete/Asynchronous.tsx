@@ -8,11 +8,9 @@ interface Film {
   year: number;
 }
 
-function sleep(duration: number): Promise<void> {
-  return new Promise<void>((resolve) => {
-    setTimeout(() => {
-      resolve();
-    }, duration);
+function sleep(delay = 0) {
+  return new Promise((resolve) => {
+    setTimeout(resolve, delay);
   });
 }
 

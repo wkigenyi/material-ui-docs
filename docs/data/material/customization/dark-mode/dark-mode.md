@@ -16,7 +16,7 @@ const darkTheme = createTheme({
   },
 });
 
-export default function App() {
+function App() {
   return (
     <ThemeProvider theme={darkTheme}>
       <CssBaseline />
@@ -24,6 +24,8 @@ export default function App() {
     </ThemeProvider>
   );
 }
+
+export default App;
 ```
 
 Adding `mode: 'dark'` to the `createTheme` helper modifies several palette values, as shown in the following demo:

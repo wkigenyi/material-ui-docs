@@ -8,14 +8,7 @@ export default function PortalFocusTrap() {
   const [container, setContainer] = React.useState<HTMLElement | null>(null);
 
   return (
-    <Box
-      sx={{
-        display: 'flex',
-        alignItems: 'center',
-        flexDirection: 'column',
-        '& [tabindex]:focus': { outline: '1px solid green' },
-      }}
-    >
+    <Box sx={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
       <button type="button" onClick={() => setOpen(true)}>
         Open
       </button>

@@ -1,15 +1,16 @@
 import * as React from 'react';
-import dynamic from 'next/dynamic';
-import { useTheme } from '@mui/material/styles';
-import Box, { BoxProps } from '@mui/material/Box';
+// import dynamic from 'next/dynamic';
+// import { useTheme } from '@mui/material/styles';
+import Box /* { BoxProps } */ from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-import Stack from '@mui/material/Stack';
-import useMediaQuery from '@mui/material/useMediaQuery';
+// import Stack from '@mui/material/Stack';
+// import useMediaQuery from '@mui/material/useMediaQuery';
 import GradientText from 'docs/src/components/typography/GradientText';
 import GetStartedButtons from 'docs/src/components/home/GetStartedButtons';
 import HeroContainer from 'docs/src/layouts/HeroContainer';
+import { StoreTemplatesSet1, StoreTemplatesSet2 } from './BankayoBranding';
 
-function createLoading(sx: BoxProps['sx']) {
+/* function createLoading(sx: BoxProps['sx']) {
   return function Loading() {
     return (
       <Box
@@ -26,75 +27,26 @@ function createLoading(sx: BoxProps['sx']) {
       />
     );
   };
-}
+} */
 
-const TaskCard = dynamic(() => import('../showcase/TaskCard'), {
-  ssr: false,
-  loading: createLoading({ width: 360, height: 280 }),
-});
-const PlayerCard = dynamic(() => import('../showcase/PlayerCard'), {
-  ssr: false,
-  loading: createLoading({ width: 400, height: 240 }),
-});
-const ThemeToggleButton = dynamic(() => import('../showcase/ThemeToggleButton'), {
-  ssr: false,
-  loading: createLoading({ width: 360, height: 48 }),
-});
-const ThemeChip = dynamic(() => import('../showcase/ThemeChip'), {
-  ssr: false,
-  loading: createLoading({ width: 400, height: 24 }),
-});
-const ThemeTimeline = dynamic(() => import('../showcase/ThemeTimeline'), {
-  ssr: false,
-  loading: createLoading({ width: 400, height: 180 }),
-});
-const FolderTable = dynamic(() => import('../showcase/FolderTable'), {
-  ssr: false,
-  loading: createLoading({ width: 360, height: 210 }),
-});
-const ThemeDatePicker = dynamic(() => import('../showcase/ThemeDatePicker'), {
-  ssr: false,
-  loading: createLoading({ width: 360, height: 260 }),
-});
-const ThemeTabs = dynamic(() => import('../showcase/ThemeTabs'), {
-  ssr: false,
-  loading: createLoading({ width: { md: 360, xl: 400 }, height: 48 }),
-});
-const ThemeSlider = dynamic(() => import('../showcase/ThemeSlider'), {
-  ssr: false,
-  loading: createLoading({ width: 400, height: 104 }),
-});
-const ThemeButton = dynamic(() => import('../showcase/ThemeButton'), {
-  ssr: false,
-  loading: createLoading({ width: 360, height: 38 }),
-});
-const ThemeAccordion = dynamic(() => import('../showcase/ThemeAccordion'), {
-  ssr: false,
-  loading: createLoading({ width: { md: 360, xl: 400 }, height: 231 }),
-});
-const NotificationCard = dynamic(() => import('../showcase/NotificationCard'), {
-  ssr: false,
-  loading: createLoading({ width: { md: 360, xl: 400 }, height: 103 }),
-});
+
 
 export default function Hero() {
-  const globalTheme = useTheme();
-  const isMdUp = useMediaQuery(globalTheme.breakpoints.up('md'));
+  // const globalTheme = useTheme();
+  // const isMdUp = useMediaQuery(globalTheme.breakpoints.up('md'));
   return (
     <HeroContainer
       linearGradient
       left={
         <Box sx={{ textAlign: { xs: 'center', md: 'left' } }}>
           <Typography variant="h1" sx={{ my: 2, maxWidth: 500 }}>
-            <GradientText>Move faster</GradientText> <br />
-            with intuitive React UI tools
+            <GradientText>Build a bank faster</GradientText> <br />
+            with intuitive BANKAYO tools
           </Typography>
           <Typography color="text.secondary" sx={{ mb: 3, maxWidth: 500 }}>
-            MUI offers a comprehensive suite of free UI tools to help you ship new features faster.
-            Start with Material UI, our fully-loaded component library, or bring your own design
-            system to our production-ready components.
+            BANKAYO offers customizations on top of the robust FINERACT open source banking system. Start with our preset customization of the system or bring your own customization requests and we integrate them.
           </Typography>
-          <GetStartedButtons primaryLabel="Discover the Core libraries" primaryUrl="/core/" />
+          <GetStartedButtons primaryLabel="Book  a demo today" primaryUrl="/core/" />
         </Box>
       }
       rightSx={{
@@ -117,28 +69,41 @@ export default function Hero() {
         },
       }}
       right={
-        <React.Fragment>
-          {isMdUp && (
-            <Stack spacing={3} sx={{ '& > .MuiPaper-root': { maxWidth: 'none' } }}>
-              <TaskCard />
-              <ThemeToggleButton />
-              <ThemeDatePicker />
-              <ThemeButton />
-              <FolderTable />
-            </Stack>
-          )}
-          {isMdUp && (
-            <Stack spacing={3} sx={{ ml: 3, '& > .MuiPaper-root': { maxWidth: 'none' } }}>
-              <NotificationCard />
-              <ThemeChip />
-              <ThemeTimeline />
-              <ThemeSlider />
-              <ThemeTabs />
-              <PlayerCard />
-              <ThemeAccordion />
-            </Stack>
-          )}
-        </React.Fragment>
+        <Box sx={{ position: 'relative', height: '100%', perspective: '1000px' }}>
+          <Box
+            sx={{
+              left: '40%',
+              position: 'absolute',
+              display: 'flex',
+              transform: 'translateX(-40%) rotateZ(-30deg) rotateX(8deg) rotateY(8deg)',
+              transformOrigin: 'center center',
+            }}
+          >
+            <StoreTemplatesSet1
+              disableLink
+              keyframes={{
+                '0%': {
+                  transform: 'translateY(-200px)',
+                },
+                '100%': {
+                  transform: 'translateY(-40px)',
+                },
+              }}
+            />
+            <StoreTemplatesSet2
+              disableLink
+              keyframes={{
+                '0%': {
+                  transform: 'translateY(150px)',
+                },
+                '100%': {
+                  transform: 'translateY(40px)',
+                },
+              }}
+              sx={{ ml: { xs: 2, sm: 4, md: 8 } }}
+            />
+          </Box>
+        </Box>
       }
     />
   );

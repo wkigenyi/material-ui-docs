@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Stack from '@mui/material/Stack';
+import Box from '@mui/material/Box';
 import { createSvgIcon } from '@mui/material/utils';
 
 const HomeIcon = createSvgIcon(
@@ -23,11 +23,17 @@ const PlusIcon = createSvgIcon(
 
 export default function CreateSvgIcon() {
   return (
-    <Stack direction="row" spacing={3}>
+    <Box
+      sx={{
+        '& > :not(style)': {
+          m: 2,
+        },
+      }}
+    >
       <HomeIcon />
       <HomeIcon color="primary" />
       <PlusIcon />
       <PlusIcon color="secondary" />
-    </Stack>
+    </Box>
   );
 }

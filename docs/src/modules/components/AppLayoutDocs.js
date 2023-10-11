@@ -8,6 +8,7 @@ import NoSsr from '@mui/material/NoSsr';
 import { pathnameToLanguage } from 'docs/src/modules/utils/helpers';
 import Head from 'docs/src/modules/components/Head';
 import AppFrame from 'docs/src/modules/components/AppFrame';
+// import EditPage from 'docs/src/modules/components/EditPage';
 import AppContainer from 'docs/src/modules/components/AppContainer';
 import AppTableOfContents from 'docs/src/modules/components/AppTableOfContents';
 import AdManager from 'docs/src/modules/components/AdManager';
@@ -86,6 +87,15 @@ const StyledAppContainer = styled(AppContainer, {
   };
 });
 
+/* const ActionsDiv = styled('div')(({ theme }) => ({
+  display: 'flex',
+  marginTop: -10,
+  marginBottom: -15,
+  [theme.breakpoints.up('lg')]: {
+    justifyContent: 'flex-end',
+  },
+})); */
+
 export default function AppLayoutDocs(props) {
   const router = useRouter();
   const {
@@ -98,7 +108,7 @@ export default function AppLayoutDocs(props) {
     disableLayout = false,
     disableToc = false,
     hasTabs = false,
-    location,
+    // location,
     title,
     toc,
   } = props;
@@ -148,9 +158,12 @@ export default function AppLayoutDocs(props) {
             See https://jakearchibald.com/2014/dont-use-flexbox-for-page-layout/ for more details.
           */}
           <StyledAppContainer disableAd={disableAd} hasTabs={hasTabs} disableToc={disableToc}>
+            {/* <ActionsDiv>
+              <EditPage sourceLocation={location} />
+            </ActionsDiv> */}
             {children}
             <NoSsr>
-              <AppLayoutDocsFooter tableOfContents={toc} location={location} />
+              <AppLayoutDocsFooter tableOfContents={toc} />
             </NoSsr>
           </StyledAppContainer>
           {disableToc ? null : <AppTableOfContents toc={toc} />}

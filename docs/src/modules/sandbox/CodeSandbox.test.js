@@ -67,7 +67,7 @@ describe('CodeSandbox', () => {
   </body>
 </html>`,
       },
-      'src/Demo.js': {
+      'Demo.js': {
         content: `import * as React from 'react';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
@@ -83,7 +83,7 @@ export default function BasicButtons() {
 }
 `,
       },
-      'src/index.js': {
+      'index.js': {
         content: `import * as React from 'react';
 import * as ReactDOM from 'react-dom/client';
 import { StyledEngineProvider } from '@mui/material/styles';
@@ -157,7 +157,7 @@ ReactDOM.createRoot(document.querySelector("#root")).render(
   </body>
 </html>`,
       },
-      'src/Demo.tsx': {
+      'Demo.tsx': {
         content: `import * as React from 'react';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
@@ -173,7 +173,7 @@ export default function BasicButtons() {
 }
 `,
       },
-      'src/index.tsx': {
+      'index.tsx': {
         content: `import * as React from 'react';
 import * as ReactDOM from 'react-dom/client';
 import { StyledEngineProvider } from '@mui/material/styles';

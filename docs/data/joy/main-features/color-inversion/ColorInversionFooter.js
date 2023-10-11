@@ -5,11 +5,13 @@ import Box from '@mui/joy/Box';
 import IconButton from '@mui/joy/IconButton';
 import Card from '@mui/joy/Card';
 import CardContent from '@mui/joy/CardContent';
+import Chip from '@mui/joy/Chip';
 import Divider from '@mui/joy/Divider';
 import Input from '@mui/joy/Input';
 import List from '@mui/joy/List';
 import ListSubheader from '@mui/joy/ListSubheader';
 import ListItem from '@mui/joy/ListItem';
+import ListItemDecorator from '@mui/joy/ListItemDecorator';
 import ListItemButton from '@mui/joy/ListItemButton';
 import Typography from '@mui/joy/Typography';
 import Sheet from '@mui/joy/Sheet';
@@ -96,17 +98,19 @@ export default function ColorInversionFooter() {
           </AspectRatio>
           <CardContent>
             <Typography level="body-sm">Intro to the MUI ecosystem</Typography>
-            <Typography level="body-xs">Blog post</Typography>
+            <Typography level="body-xs" sx={{ mb: 0.5 }}>
+              MUI blog
+            </Typography>
           </CardContent>
         </Card>
         <List
           size="sm"
           orientation="horizontal"
           wrap
-          sx={{ flexGrow: 0, '--ListItem-radius': '8px', '--ListItem-gap': '0px' }}
+          sx={{ flexGrow: 0, '--ListItem-radius': '8px' }}
         >
           <ListItem nested sx={{ width: { xs: '50%', md: 140 } }}>
-            <ListSubheader sx={{ fontWeight: 'xl' }}>Sitemap</ListSubheader>
+            <ListSubheader>Sitemap</ListSubheader>
             <List>
               <ListItem>
                 <ListItemButton>Services</ListItemButton>
@@ -115,21 +119,79 @@ export default function ColorInversionFooter() {
                 <ListItemButton>Blog</ListItemButton>
               </ListItem>
               <ListItem>
-                <ListItemButton>About</ListItemButton>
+                <ListItemButton>Contact us</ListItemButton>
               </ListItem>
             </List>
           </ListItem>
           <ListItem nested sx={{ width: { xs: '50%', md: 180 } }}>
-            <ListSubheader sx={{ fontWeight: 'xl' }}>Products</ListSubheader>
+            <ListSubheader>Product</ListSubheader>
             <List sx={{ '--ListItemDecorator-size': '32px' }}>
               <ListItem>
-                <ListItemButton>Joy UI</ListItemButton>
+                <ListItemButton>
+                  <ListItemDecorator>
+                    <img
+                      alt=""
+                      src="/static/branding/product-core-dark.svg"
+                      width="24"
+                    />
+                  </ListItemDecorator>
+                  MUI Core
+                </ListItemButton>
               </ListItem>
               <ListItem>
-                <ListItemButton>Base UI</ListItemButton>
+                <ListItemButton>
+                  <ListItemDecorator>
+                    <img
+                      alt=""
+                      src="/static/branding/product-advanced-dark.svg"
+                      width="24"
+                    />
+                  </ListItemDecorator>
+                  MUI X
+                </ListItemButton>
               </ListItem>
               <ListItem>
-                <ListItemButton>Material UI</ListItemButton>
+                <ListItemButton>
+                  <ListItemDecorator>
+                    <img
+                      alt=""
+                      src="/static/branding/product-toolpad-dark.svg"
+                      width="24"
+                    />
+                  </ListItemDecorator>
+                  MUI Toolpad
+                  <Chip
+                    variant="soft"
+                    size="sm"
+                    sx={{ minHeight: 20, fontSize: 'xs2', ml: 'auto' }}
+                  >
+                    BETA
+                  </Chip>
+                </ListItemButton>
+              </ListItem>
+              <ListItem>
+                <ListItemButton>
+                  <ListItemDecorator>
+                    <img
+                      alt=""
+                      src="/static/branding/product-designkits-dark.svg"
+                      width="24"
+                    />
+                  </ListItemDecorator>
+                  Design kits
+                </ListItemButton>
+              </ListItem>
+              <ListItem>
+                <ListItemButton>
+                  <ListItemDecorator>
+                    <img
+                      alt=""
+                      src="/static/branding/product-templates-dark.svg"
+                      width="24"
+                    />
+                  </ListItemDecorator>
+                  Templates
+                </ListItemButton>
               </ListItem>
             </List>
           </ListItem>

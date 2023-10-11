@@ -7,7 +7,7 @@ import AddCircleRoundedIcon from '@mui/icons-material/AddCircleRounded';
 import KeyboardArrowRightRounded from '@mui/icons-material/KeyboardArrowRightRounded';
 
 export default (function More(props: ButtonBaseProps) {
-  const ref = React.useRef<HTMLButtonElement>(null);
+  const ref = React.useRef<null | HTMLButtonElement>(null);
   return (
     <ButtonBase
       ref={ref}
@@ -51,7 +51,7 @@ export default (function More(props: ButtonBaseProps) {
             },
           },
           ...theme.applyDarkStyles({
-            borderColor: `${alpha(theme.palette.primaryDark[400], 0.3)}`,
+            borderColor: 'primaryDark.600',
             '&:hover, &:focus': {
               bgcolor: alpha(theme.palette.primary[900], 0.4),
             },

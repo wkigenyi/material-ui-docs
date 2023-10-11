@@ -26,6 +26,7 @@ import PageContext from 'docs/src/modules/components/PageContext';
 import { useTranslate } from 'docs/src/modules/utils/i18n';
 import SvgMuiLogomark from 'docs/src/icons/SvgMuiLogomark';
 import AppFrameBanner from 'docs/src/components/banner/AppFrameBanner';
+import LogoText from 'docs/src/components/LogoText';
 
 const nProgressStart = debounce(() => {
   NProgress.start();
@@ -194,20 +195,20 @@ export default function AppFrame(props) {
           >
             <SvgHamburgerMenu />
           </NavIconButton>
-          <NextLink href="/" passHref /* onClick={onClose} */ legacyBehavior>
-            <Box
-              component="a"
+                      <Box
+              component={NextLink}
+              href={"/"}
               aria-label={t('goToHome')}
-              sx={{ display: { md: 'flex', lg: 'none' }, ml: 2 }}
+              sx={{ display: { md: 'flex', lg: 'none' }, ml: 2,textDecoration:"none" }}
             >
-              <SvgMuiLogomark width={30} />
+              <LogoText/>
             </Box>
-          </NextLink>
+
           <GrowingDiv />
           <Stack direction="row" spacing="10px">
             <BannerComponent />
             <DeferredAppSearch />
-            <Tooltip title={t('appFrame.github')} enterDelay={300}>
+            {/* <Tooltip title={t('appFrame.github')} enterDelay={300}>
               <IconButton
                 component="a"
                 color="primary"
@@ -218,7 +219,7 @@ export default function AppFrame(props) {
                 <GitHubIcon fontSize="small" />
               </IconButton>
             </Tooltip>
-            <Notifications />
+            <Notifications /> */}
             <Tooltip title={t('appFrame.toggleSettings')} enterDelay={300}>
               <IconButton color="primary" onClick={() => setSettingsOpen(true)} sx={{ px: '8px' }}>
                 <SettingsIcon fontSize="small" />

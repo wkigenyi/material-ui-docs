@@ -124,19 +124,37 @@ const StyledTreeItem = styled(TreeItem)(({ theme }) => [
     },
     '& .MuiTreeItem-root': {
       position: 'relative',
+      '&:last-of-type': {
+        '&:before': {
+          height: 34 / 2,
+        },
+      },
       '&:before': {
         content: '""',
         display: 'block',
         position: 'absolute',
-        left: -14,
+        left: -18,
         height: '100%',
-        width: 1.5,
+        width: 2,
         backgroundColor: (theme.vars || theme).palette.grey[200],
       },
     },
     '& .MuiTreeItem-group': {
       marginLeft: 0,
       paddingLeft: theme.spacing(3),
+      '& .MuiTreeItem-content': {
+        '&:before': {
+          content: '""',
+          position: 'absolute',
+          display: 'block',
+          width: 24,
+          height: 2,
+          backgroundColor: (theme.vars || theme).palette.grey[200],
+          top: '50%',
+          left: 6,
+          transform: 'translate(-100%, -50%)',
+        },
+      },
     },
   },
   theme.applyDarkStyles({
@@ -175,34 +193,25 @@ export default function FolderTreeView() {
       sx={{ p: 1, overflowY: 'auto' }}
     >
       <CustomTreeItem nodeId="1" label="src">
-        <CustomTreeItem nodeId="2" label="components">
-          <CustomTreeItem nodeId="3" label="Button.tsx" ContentProps={{ lastNestedChild: true }} />
-          <CustomTreeItem nodeId="4" label="Drawer.tsx" ContentProps={{ lastNestedChild: true }} />
-          <CustomTreeItem nodeId="5" label="Navbar.tsx" ContentProps={{ lastNestedChild: true }} />
+        <CustomTreeItem nodeId="2" label="data">
           <CustomTreeItem
-            nodeId="6"
-            label="TreeView.tsx"
+            nodeId="3"
+            label="read-and-write.js"
+            ContentProps={{ lastNestedChild: true }}
+          />
+          <CustomTreeItem
+            nodeId="4"
+            label="authentication-api.js"
             ContentProps={{ lastNestedChild: true }}
           />
         </CustomTreeItem>
-        <CustomTreeItem nodeId="7" label="blocks">
+        <CustomTreeItem nodeId="5" label="work">
           <CustomTreeItem
-            nodeId="8"
-            label="SignUpPage.tsx"
+            nodeId="6"
+            label="job-mapping.js"
             ContentProps={{ lastNestedChild: true }}
           />
-          <CustomTreeItem nodeId="9" label="PricingTable.tsx">
-            <CustomTreeItem
-              nodeId="10"
-              label="PaymentOptions.tsx"
-              ContentProps={{ lastNestedChild: true }}
-            />
-            <CustomTreeItem
-              nodeId="11"
-              label="EarlyBirdDiscount.tsx"
-              ContentProps={{ lastNestedChild: true }}
-            />
-          </CustomTreeItem>
+          <CustomTreeItem nodeId="7" label="articles.js" ContentProps={{ lastNestedChild: true }} />
         </CustomTreeItem>
       </CustomTreeItem>
     </TreeView>
